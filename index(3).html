@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laundry Desire Hub | Dry Cleaning</title>
+<style>
+:root{--navy:#06265e;--blue:#164ca7;--red:#e21f2f;--light:#f7f9fd;--text:#17213b;--border:#dce3ef}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff}
+a{text-decoration:none;color:inherit}.container{width:min(1440px,94%);margin:auto}
+header{height:86px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 3.2%;position:sticky;top:0;z-index:50;box-shadow:0 2px 12px #001b4915}
+.brand{display:flex;align-items:center;gap:14px}.brand-mark{width:60px;height:54px;border-radius:5px;background:var(--navy);position:relative;display:grid;place-items:center;color:#fff;font-size:25px}.brand-mark:after{content:"";position:absolute;width:22px;height:22px;border:2px solid #fff;border-radius:50%}.brand-text strong{display:block;color:var(--navy);font-size:24px;letter-spacing:.2px}.brand-text span{display:block;color:var(--red);font-weight:800;letter-spacing:2px;font-size:14px;margin-top:2px}
+nav{display:flex;align-items:center;gap:34px;font-weight:700;font-size:14px}nav a{padding:33px 0;position:relative}nav a.active:after{content:"";height:3px;background:var(--navy);left:0;right:0;bottom:23px;position:absolute}.admin{background:var(--navy);color:white;padding:13px 20px;border-radius:9px;box-shadow:0 5px 12px #06265e35}
+.menu{display:none;font-size:27px;color:var(--navy);cursor:pointer}
+
+.hero{min-height:500px;position:relative;overflow:hidden;background:var(--navy)}
+.hero-bg{position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(3,39,94,.88) 0%,rgba(6,43,102,.62) 42%,rgba(6,38,94,.22) 72%,rgba(6,38,94,.08) 100%),url("shop-front-1.jpg");background-size:cover;background-position:center}
+.hero-content{position:relative;z-index:2;color:#fff;padding:64px 3.2% 25px;min-height:500px;display:flex;flex-direction:column;justify-content:space-between}
+.badge{display:inline-block;background:#123d73;border:1px solid #7192bc;border-radius:22px;padding:9px 17px;font-size:14px;font-weight:700;margin-bottom:24px}.badge:first-letter{color:#ffd12a}
+.hero h1{font-size:46px;margin:0 0 7px;letter-spacing:.4px}.hero h2{font-size:25px;color:#ffd000;margin:0 0 24px}.pill{background:#f4f6fa;color:#08265c;border-radius:34px;padding:15px 25px;max-width:560px;font-weight:700;line-height:1.45}
+.features{display:flex;gap:0;margin-top:30px}.feature{width:150px;text-align:center;border-right:1px solid #ffffff55;padding:0 20px}.feature:last-child{border:0}.feature .ico{font-size:26px;margin:auto auto 10px;border:1px solid #ffffff55;border-radius:50%;width:48px;height:48px;display:grid;place-items:center}.feature b{font-size:14px;line-height:1.35}
+.hero-bottom{display:flex;justify-content:flex-end;gap:0;margin-top:-72px}.info{background:#071d3bd9;color:white;min-width:205px;padding:20px 25px;border-left:1px solid #ffffff55}.info strong{display:block;margin-bottom:5px}.info small{line-height:1.5}
+
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:20px 0 18px}.card{border:1px solid #e1e5ec;border-radius:10px;background:#fff;padding:17px;box-shadow:0 3px 12px #17213b12}.card-head{display:flex;gap:14px;align-items:center}.circle{width:55px;height:55px;border-radius:50%;background:#144ba5;color:#fff;display:grid;place-items:center;font-size:25px;box-shadow:0 4px 9px #0c3d912f}.card h3{margin:0;color:#123d87;font-size:19px}.card p{margin:5px 0 12px;font-size:13px;color:#586173;line-height:1.4}.card img{width:100%;height:118px;object-fit:cover;border-radius:7px}.price-btn{display:block;width:128px;margin:10px auto 0;background:#2059bd;color:white;text-align:center;padding:8px;border-radius:5px;font-weight:700;font-size:12px}
+
+.section-title{display:flex;align-items:center;gap:15px;justify-content:center;color:#123d87;font-size:23px;margin:10px 0}.section-title:before,.section-title:after{content:"";height:1px;background:#cfd7e4;width:20%}.tabs{display:flex;justify-content:center;gap:28px;margin:0 0 10px}.tab{border:1px solid #d8dfeb;background:#fff;border-radius:5px;padding:9px 38px;font-weight:700;font-size:13px;cursor:pointer}.tab.active{background:#1d55b6;color:#fff}
+.price-box{border:1px solid #d9e0ec;border-radius:10px;box-shadow:0 2px 10px #12264a10;padding:18px 25px;margin-bottom:10px}.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px}.price-col{min-width:0}.price-head{display:flex;justify-content:space-between;color:#123d87;font-weight:800;font-size:12px;padding-bottom:8px;border-bottom:1px solid #e3e8f0}.price-row{display:flex;gap:8px;align-items:flex-end;font-weight:700;font-size:12px;color:#123d87;margin:8px 0}.price-row:before{content:"◆";color:#d7252d;font-size:8px}.dots{flex:1;border-bottom:2px dotted #aeb8cb;min-width:10px;margin-bottom:3px}.price-more{display:block;margin:12px auto 0;border:1px solid #d9e0eb;background:#f2f4f8;border-radius:6px;padding:10px 50px;color:#123d87;font-weight:700;cursor:pointer}
+
+.booking{display:grid;grid-template-columns:1.05fr .95fr;border:2px solid #123d87;border-radius:10px;overflow:hidden;margin:12px 0 25px}.book-left{background:#062d68;color:#fff;padding:22px 25px}.book-left h2{margin:0 0 3px;font-size:18px}.book-left>p{font-size:11px;margin:0 0 16px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 18px}.field label{display:block;font-size:11px;font-weight:700;margin-bottom:5px}.field input,.field select{width:100%;height:38px;border:1px solid #d6deea;border-radius:7px;padding:0 10px}.full{grid-column:1/-1}.book-right{background:#fff;padding:17px 20px;display:grid;grid-template-columns:1fr 1fr;gap:20px}.add-box h3,.summary h3{color:#123d87;font-size:15px;margin:0 0 13px}.add-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.qty{display:flex;align-items:center;gap:0}.qty button{height:38px;width:36px;border:1px solid #d5ddeb;background:#fff;cursor:pointer}.qty input{width:45px;text-align:center;height:38px;border:1px solid #d5ddeb}.add-btn{margin-top:10px;background:#1c59bb;color:#fff;border:0;border-radius:6px;padding:9px 16px;font-weight:700;cursor:pointer}.items{margin-top:10px;width:100%;border-collapse:collapse;font-size:10px}.items th{color:#123d87;text-align:left;border-bottom:1px solid #e0e6ef;padding:7px}.items td{padding:7px;border-bottom:1px solid #eef1f6}.summary{border:1px solid #dce2ed;border-radius:8px;padding:17px;box-shadow:0 2px 10px #15264c10}.sumline{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #e8ebf1;font-size:12px}.total{font-weight:800;font-size:15px}.wa{display:block;text-align:center;background:#10a84b;color:white;padding:12px;border-radius:6px;margin-top:16px;font-weight:800;cursor:pointer}.note{text-align:center;font-size:10px;color:#606a7d;margin-top:10px}
+
+footer{background:#fafcff;border-top:1px solid #e1e6ee;padding:25px 3.2% 10px}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}.foot h3{color:#123d87;font-size:14px}.foot p,.foot li{font-size:11px;line-height:1.7;color:#3e4759}.foot ul{padding-left:18px}.copyright{border-top:1px solid #e1e6ee;margin-top:18px;padding-top:9px;display:flex;justify-content:space-between;font-size:10px;color:#596273}
+
+.control-tabs{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 18px}.control-tab{border:1px solid #d6deea;background:#fff;color:#123d87;border-radius:6px;padding:8px 12px;font-weight:700;cursor:pointer}.control-tab.active{background:#123f8c;color:#fff}.control-pane{display:none}.control-pane.active{display:block}.control-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.control-grid label,.service-edit-grid>div{font-size:11px;font-weight:700;color:#42506a}.control-grid input,.control-grid textarea,.service-edit-grid input,.service-edit-grid textarea,.price-editor-head select,.admin-price-row input{width:100%;margin-top:5px;height:38px;border:1px solid #d5ddeb;border-radius:6px;padding:0 10px;background:#fff}.control-grid .wide{grid-column:1/-1}.service-edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.service-edit-grid h3{margin:0 0 5px;color:#123d87;font-size:13px}.service-edit-grid textarea{height:70px;padding:8px;resize:vertical}.price-editor-head{display:flex;gap:10px;margin-bottom:12px}.price-editor-head select{width:240px}.admin-price-row{display:grid;grid-template-columns:1.8fr 1fr auto;gap:8px;margin-bottom:8px;align-items:center}.admin-price-row button{height:38px;border:0;background:#fff;color:#d92332;font-size:18px;cursor:pointer}.control-save{margin-top:18px;padding-top:15px;border-top:1px solid #e2e7ef;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.saved-msg{color:#159447;font-weight:700;font-size:12px}.security-note{font-size:11px;color:#8a5a00;background:#fff8e8;border:1px solid #f1dfac;padding:10px;border-radius:6px}
+@media(max-width:1000px){nav{gap:14px;font-size:12px}.services{grid-template-columns:1fr 1fr}.hero h1{font-size:38px}.booking{grid-template-columns:1fr}.book-right{grid-template-columns:1fr}}
+@media(max-width:700px){header{height:70px}.brand-text strong{font-size:16px}.brand-text span{font-size:10px}.brand-mark{width:44px;height:42px}.menu{display:block}nav{display:none;position:absolute;top:70px;left:0;right:0;background:#fff;flex-direction:column;padding:15px;box-shadow:0 5px 15px #0002}nav.open{display:flex}nav a{padding:10px}.admin{padding:10px 15px}.hero-content{padding:38px 20px 25px}.hero{min-height:650px}.hero-content{min-height:650px}.hero h1{font-size:31px}.hero-bottom{position:absolute;bottom:0;left:0;right:0;display:grid;grid-template-columns:1fr 1fr}.info{min-width:0;padding:12px}.features{overflow-x:auto}.services{grid-template-columns:1fr}.price-grid{grid-template-columns:1fr;gap:20px}.tabs{overflow-x:auto;justify-content:flex-start;padding:0 10px}.tab{white-space:nowrap;padding:8px 18px}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}.footer-grid{grid-template-columns:1fr 1fr}.copyright{flex-direction:column;gap:5px}}
+
+.hub-gallery{display:grid;grid-template-columns:1.35fr .8fr .8fr;grid-template-rows:180px 180px;gap:12px}
+.hub-gallery>div{position:relative;overflow:hidden;border-radius:10px;border:1px solid #dfe5ee;box-shadow:0 3px 12px #17213b12;background:#fff}
+.hub-gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.hub-gallery>div:hover img{transform:scale(1.04)}
+.gallery-main{grid-row:1/3}.gallery-sign{grid-column:2/4}
+.hub-gallery span{position:absolute;left:10px;bottom:10px;background:#06265ed9;color:#fff;padding:7px 11px;border-radius:5px;font-size:11px;font-weight:700}
+@media(max-width:700px){.hub-gallery{grid-template-columns:1fr 1fr;grid-template-rows:190px 150px 150px}.gallery-main{grid-row:1;grid-column:1/3}.gallery-sign{grid-column:1/3}}
+
+
+@media(max-width:700px){.items{min-width:430px}.add-box{overflow-x:auto}}
+
+.admin-panel{background:#f7f9fd;padding:22px 3.2%;border-top:1px solid #e0e6ef}
+.admin-card,.billing-card{width:min(1100px,100%);margin:auto;background:#fff;border:1px solid #dbe2ed;border-radius:10px;padding:22px;box-shadow:0 4px 18px #17213b12}
+.admin-card{text-align:center}.admin-card p{font-size:12px;color:#687386}.admin-card input{height:40px;width:260px;border:1px solid #d2dbe8;border-radius:6px;padding:0 12px}.admin-card button,.bill-actions button,.bill-add button{height:40px;background:#123f8c;color:#fff;border:0;border-radius:6px;padding:0 18px;font-weight:700;cursor:pointer;margin-left:7px}.pin-error{color:#d92332;font-size:11px;margin-top:8px;min-height:14px}
+.billing-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.billing-top h2{margin:0;color:#123d87;font-size:19px}.billing-top p{font-size:11px;color:#697386;margin:4px 0}.logout-btn{border:1px solid #d5dce8;background:#fff;border-radius:6px;padding:8px 14px;cursor:pointer}
+.bill-form{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.bill-form input,.bill-add input{height:38px;border:1px solid #d5ddeb;border-radius:6px;padding:0 10px}.bill-add{display:grid;grid-template-columns:2fr .7fr .9fr auto;gap:8px;margin:14px 0}.bill-add button{margin:0}.bill-table{width:100%;border-collapse:collapse;font-size:11px}.bill-table th{background:#f1f4f9;color:#123d87;text-align:left;padding:9px}.bill-table td{border-bottom:1px solid #e6eaf1;padding:9px}.bill-total{display:flex;justify-content:flex-end;align-items:center;gap:30px;margin-top:15px}.bill-total label{font-size:12px}.bill-total input{width:100px;height:34px;border:1px solid #d5ddeb;border-radius:5px;padding:0 8px}.bill-total strong{font-size:18px;color:#123d87}.bill-actions{text-align:right;margin-top:15px}.bill-actions button{margin-left:8px}
+@media(max-width:700px){.control-grid,.service-edit-grid{grid-template-columns:1fr}.control-grid .wide{grid-column:auto}.price-editor-head{flex-direction:column}.price-editor-head select{width:100%}.admin-price-row{grid-template-columns:1fr 90px 35px}.admin-card input{width:100%;margin-bottom:8px}.admin-card button{margin:0;width:100%}.bill-form{grid-template-columns:1fr 1fr}.bill-add{grid-template-columns:1fr 70px 90px}.bill-add button{grid-column:1/-1}.bill-total{justify-content:space-between;gap:8px}.bill-actions{text-align:center}.bill-actions button{width:100%;margin:5px 0}}
+.pickup-note{margin-top:7px;padding:9px 10px;background:#edf7ff;border:1px solid #c9e5ff;border-radius:6px;color:#12457f;font-size:10px}.pickup-note.free{background:#edfbed;border-color:#b9e6c0;color:#166b2b}.pickup-note.charge{background:#fff8e8;border-color:#f0d28b;color:#7b5a00}
+.signature-upload{height:38px;border:1px solid #d5ddeb;border-radius:6px;padding:0 10px;display:flex;align-items:center;gap:8px;font-size:11px;color:#566276;background:#fff}
+.signature-upload input{height:auto;border:0;padding:0;flex:1}
+@media(max-width:700px){.hero-bg{background-image:linear-gradient(90deg,rgba(3,39,94,.52),rgba(3,39,94,.25)),url("shop-front-1.jpg");background-position:center center;background-size:cover}.hero{background:#06265e}.hero-content{background:transparent}}\n</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="#home">
+    <div class="brand-mark">◉</div>
+    <div class="brand-text"><strong>LAUNDRY DESIRE HUB</strong><span>DRY CLEANING</span></div>
+  </a>
+  <div class="menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</div>
+  <nav>
+    <a class="active" href="#home">HOME</a><a href="#services">SERVICES & PRICE</a><a href="#booking">BOOK NOW</a><a href="#track">TRACK ORDER</a><a href="#gallery">GALLERY</a><a href="#adminPanel">ADMIN</a><a href="#contact">CONTACT</a><a class="admin" href="#admin">🔒 ADMIN LOGIN</a>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div>
+      <span class="badge">⭐ Best Laundry Services in Bangalore</span>
+      <h1>LAUNDRY DESIRE HUB</h1><h2>DRY CLEANING</h2>
+      <div class="pill">Steam Iron • Dry Clean • Wash & Fold • Carpet • Door Mat<br>Bag • Shoes • Curtain Cleaning & More</div>
+      <div class="features">
+        <div class="feature"><div class="ico">⚙</div><b>Quality<br>Cleaning</b></div>
+        <div class="feature"><div class="ico">🚚</div><b>On Time<br>Delivery</b></div>
+        <div class="feature"><div class="ico">♙</div><b>Best<br>Price</b></div>
+        <div class="feature"><div class="ico">✂</div><b>Customer<br>Satisfaction</b></div>
+      </div>
+    </div>
+    <div class="hero-bottom">
+      <div class="info">🕘 <strong>Timings</strong><small>9:00 AM - 9:00 PM<br>All Days</small></div>
+      <div class="info">📞 <strong>Call Us</strong><small>9535983365<br>9019355091</small></div>
+      <div class="info">📍 <strong>Location</strong><small>Kasavanahalli, Bangalore<br>560 035</small></div>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+<section id="services" class="services">
+  <article class="card"><div class="card-head"><div class="circle">♙</div><div><h3>DRY CLEANING</h3><p>Premium dry cleaning for all types of clothes.</p></div></div><img src="dry-cleaning.jpg"><a class="price-btn" href="#prices">View Price List</a></article>
+  <article class="card"><div class="card-head"><div class="circle">♨</div><div><h3>STEAM PRESS</h3><p>Perfect steam press for crisp & fresh clothes.</p></div></div><img src="steam-press.jpg"><a class="price-btn" href="#prices">View Price List</a></article>
+  <article class="card"><div class="card-head"><div class="circle">▣</div><div><h3>WASH & FOLD</h3><p>Wash, dry & fold with care and hygiene.</p></div></div><img src="wash-fold.jpg"><a class="price-btn" href="#prices">View Price List</a></article>
+  <article class="card"><div class="card-head"><div class="circle">♜</div><div><h3>WASH & PRESS</h3><p>Wash & steam press for perfect finish.</p></div></div><img src="wash-press.jpg"><a class="price-btn" href="#prices">View Price List</a></article>
+</section>
+
+<section id="prices">
+<div class="section-title">◇ &nbsp; OUR PRICE LIST &nbsp; ◇</div>
+<div class="tabs">
+<button class="tab active" data-price-tab="dry">DRY CLEANING</button>
+<button class="tab" data-price-tab="steam">STEAM PRESS</button>
+<button class="tab" data-price-tab="fold">WASH & FOLD</button>
+<button class="tab" data-price-tab="press">WASH & PRESS</button>
+</div>
+<div class="price-box">
+<div id="price-dry" class="price-tab-panel"><div class="price-grid"><div class="price-col"><div class="price-head"><span>ITEM</span><span>RATE (₹)</span></div><div class="price-row"><span>REGULAR GARMENTS</span><span class="dots"></span><b>₹ 100</b></div><div class="price-row"><span>PULLOVERS / JACKETS</span><span class="dots"></span><b>₹ 199</b></div><div class="price-row"><span>BEDSHEET - SINGLE / DOUBLE / HEAVY</span><span class="dots"></span><b>₹ 149 / 189 / 239</b></div><div class="price-row"><span>CUSHION / PILLOW COVERS - SMALL / LARGE</span><span class="dots"></span><b>₹ 69 / 99</b></div><div class="price-row"><span>CURTAINS - SMALL / LARGE / HEAVY (PER PANEL 3X7FT)</span><span class="dots"></span><b>₹ 149 / 199 / 269</b></div><div class="price-row"><span>BLANKET - SMALL / SINGLE / DOUBLE / HEAVY</span><span class="dots"></span><b>₹ 299 / 349 / 500</b></div><div class="price-row"><span>SAREE - COTTON / SILK / ORNAMENTAL</span><span class="dots"></span><b>₹ 249 / 349</b></div><div class="price-row"><span>DHOTI - NORMAL / SILK</span><span class="dots"></span><b>₹ 149 / 199</b></div><div class="price-row"><span>LEHANGA</span><span class="dots"></span><b>₹ 399 / 499 / 599</b></div><div class="price-row"><span>BLAZER / HEAVY / JACKET</span><span class="dots"></span><b>₹ 199 / 249</b></div><div class="price-row"><span>BLOUSE - NORMAL / ORNAMENTAL</span><span class="dots"></span><b>₹ 99 / 149</b></div><div class="price-row"><span>LADIES DRESS - NORMAL / DESIGNER</span><span class="dots"></span><b>₹ 249 / 349</b></div></div><div class="price-col"><div class="price-head"><span>ITEM</span><span>RATE (₹)</span></div><div class="price-row"><span>GENTS KURTA - NORMAL / HEAVY</span><span class="dots"></span><b>₹ 199 / 249</b></div><div class="price-row"><span>GENTS SHERWANI - NORMAL / DESIGNER</span><span class="dots"></span><b>₹ 299 / 399</b></div><div class="price-row"><span>KIDS WEAR - NORMAL</span><span class="dots"></span><b>₹ 75 / 149 / 199</b></div><div class="price-row"><span>LADIES KURTA - NORMAL</span><span class="dots"></span><b>₹ 149 / 199</b></div><div class="price-row"><span>WOOLEN SHAWL</span><span class="dots"></span><b>₹ 149 / 199</b></div><div class="price-row"><span>FROCK - NORMAL / ORNAMENTAL</span><span class="dots"></span><b>₹ 199 / 249</b></div><div class="price-row"><span>OVERCOAT</span><span class="dots"></span><b>₹ 299</b></div><div class="price-row"><span>SHOE</span><span class="dots"></span><b>₹ 249</b></div><div class="price-row"><span>CARPET</span><span class="dots"></span><b>₹ 35 PER SQFT</b></div><div class="price-row"><span>DOOR MAT</span><span class="dots"></span><b>₹ 149 / 199</b></div><div class="price-row"><span>TROLLEY BAG</span><span class="dots"></span><b>₹ 399 / 599</b></div><div class="price-row"><span>SMALL BAG</span><span class="dots"></span><b>₹ 199 / 249</b></div></div></div></div>
+<div id="price-steam" class="price-tab-panel" style="display:none"><div class="price-grid"><div class="price-col"><div class="price-head"><span>ITEM</span><span>RATE (₹)</span></div><div class="price-row"><span>REGULAR GARMENTS</span><span class="dots"></span><b>₹ 10 / PIECE</b></div><div class="price-row"><span>PULLOVERS / JACKETS</span><span class="dots"></span><b>₹ 10 / PIECE</b></div><div class="price-row"><span>BEDSHEET - SINGLE</span><span class="dots"></span><b>₹ 19 / PIECE</b></div><div class="price-row"><span>BEDSHEET - DOUBLE</span><span class="dots"></span><b>₹ 29 / PIECE</b></div><div class="price-row"><span>BEDSHEET - HEAVY</span><span class="dots"></span><b>₹ 49 / PIECE</b></div><div class="price-row"><span>CURTAINS - WINDOWS / SMALL</span><span class="dots"></span><b>₹ 19 / PIECE</b></div><div class="price-row"><span>CURTAINS - DOORS / LARGE</span><span class="dots"></span><b>₹ 39 / PIECE</b></div><div class="price-row"><span>CURTAINS / HEAVY</span><span class="dots"></span><b>₹ 59 / PIECE</b></div><div class="price-row"><span>SAREE - NORMAL (COTTON)</span><span class="dots"></span><b>₹ 49 / PIECE</b></div><div class="price-row"><span>SAREE - SILK</span><span class="dots"></span><b>₹ 49 / PIECE</b></div></div><div class="price-col"><div class="price-head"><span>ITEM</span><span>RATE (₹)</span></div><div class="price-row"><span>SAREE LEHANGA - HEAVY / ORNAMENTAL</span><span class="dots"></span><b>₹ 79 / PIECE</b></div><div class="price-row"><span>BLAZER / HEAVY JACKET</span><span class="dots"></span><b>₹ 49 / PIECE</b></div><div class="price-row"><span>BLOUSE - NORMAL</span><span class="dots"></span><b>₹ 10 / PIECE</b></div><div class="price-row"><span>BLOUSE - ORNAMENTAL</span><span class="dots"></span><b>₹ 20 / PIECE</b></div><div class="price-row"><span>LADIES DRESS NORMAL</span><span class="dots"></span><b>₹ 30 / PIECE</b></div><div class="price-row"><span>LADIES DRESS DESIGNER / ORNAMENTAL</span><span class="dots"></span><b>₹ 79 / PIECE</b></div><div class="price-row"><span>GENTS KURTA - NORMAL</span><span class="dots"></span><b>₹ 10 / PIECE</b></div><div class="price-row"><span>LADIES KURTA - NORMAL</span><span class="dots"></span><b>₹ 10 / PIECE</b></div><div class="price-row"><span>GENTS KURTA - HEAVY</span><span class="dots"></span><b>₹ 49 / PIECE</b></div></div></div></div>
+<div id="price-fold" class="price-tab-panel" style="display:none"><div class="price-grid"><div class="price-col"><div class="price-head"><span>ITEM</span><span>RATE (₹)</span></div><div class="price-row"><span>UPTO 4 KGS (REGULAR GARMENTS)</span><span class="dots"></span><b>₹ 269 FLAT</b></div><div class="price-row"><span>ABOVE 4 KGS (REGULAR GARMENTS)</span><span class="dots"></span><b>₹ 69 / KG</b></div><div class="price-row"><span>CURTAINS - SMALL (PER PANEL 3 FT)</span><span class="dots"></span><b>₹ 49 / PIECE</b></div><div class="price-row"><span>CURTAINS - LARGE (PER PANEL 3 FT)</span><span class="dots"></span><b>₹ 79 / PIECE</b></div></div><div class="price-col"><div class="price-head"><span>ITEM</span><span>RATE (₹)</span></div><div class="price-row"><span>CURTAINS - HEAVY (PER PANEL 3 FT)</span><span class="dots"></span><b>₹ 119 / PIECE</b></div><div class="price-row"><span>BLANKET / QUILL - SINGLE</span><span class="dots"></span><b>₹ 199 / PIECE</b></div><div class="price-row"><span>BLANKET / QUILL - DOUBLE</span><span class="dots"></span><b>₹ 350 / PIECE</b></div><div class="price-row"><span>BLANKET / QUILL - HEAVY</span><span class="dots"></span><b>₹ 400 / PIECE</b></div></div></div></div>
+<div id="price-press" class="price-tab-panel" style="display:none"><div class="price-grid"><div class="price-col"><div class="price-head"><span>ITEM</span><span>RATE (₹)</span></div><div class="price-row"><span>UPTO 4 KGS (REGULAR GARMENTS)</span><span class="dots"></span><b>₹ 380 FLAT</b></div><div class="price-row"><span>ABOVE 4 KGS (REGULAR GARMENTS)</span><span class="dots"></span><b>₹ 95 / KG</b></div><div class="price-row"><span>CURTAINS - SMALL (PER PANEL 3 FT)</span><span class="dots"></span><b>₹ 99 / PIECE</b></div></div><div class="price-col"><div class="price-head"><span>ITEM</span><span>RATE (₹)</span></div><div class="price-row"><span>CURTAINS - LARGE (PER PANEL 3 FT)</span><span class="dots"></span><b>₹ 119 / PIECE</b></div><div class="price-row"><span>CURTAINS - HEAVY (PER PANEL 3 FT)</span><span class="dots"></span><b>₹ 159 / PIECE</b></div></div></div></div>
+<button class="price-more" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book From Price List</button>
+</div></section>
+
+<section id="gallery" style="padding:8px 0 18px">
+  <div class="section-title">◇ &nbsp; OUR LAUNDRY HUB &nbsp; ◇</div>
+  <p style="text-align:center;color:#657087;font-size:13px;margin:-3px 0 15px">
+    Visit Laundry Desire Hub — clean, professional laundry & dry-cleaning service.
+  </p>
+  <div class="hub-gallery">
+    <div class="gallery-main"><img src="shop-front-1.jpg" alt="Laundry Desire Hub shop front"><span>Our Laundry Store</span></div>
+    <div class="gallery-side"><img src="shop-front-2.jpg" alt="Laundry Desire Hub from side"><span>Store Front</span></div>
+    <div class="gallery-side"><img src="shop-night.jpg" alt="Laundry Desire Hub at night"><span>Open All Days</span></div>
+    <div class="gallery-sign"><img src="shop-sign.jpg" alt="Laundry Desire Hub signboard"><span>Our Signboard</span></div>
+  </div>
+</section>
+
+<section id="booking" class="booking">
+  <div class="book-left"><h2>BOOK YOUR SERVICE</h2><p>Fill the details and send booking on WhatsApp</p>
+    <div class="form-grid">
+      <div class="field"><label>Name *</label><input id="name" placeholder="Enter your name"></div>
+      <div class="field"><label>Mobile Number *</label><input id="phone" placeholder="Enter mobile number"></div>
+      <div class="field full"><label>Address / Location *</label><input id="address" placeholder="Enter your complete address"></div>
+      <div class="field"><label>Preferred Date *</label><input id="date" type="date"></div>
+      <div class="field"><label>Preferred Time *</label><input id="time" type="time"></div>
+      <div class="field full"><label>Pickup & Delivery *</label><select id="pickupDelivery" onchange="updatePickupDelivery()"><option value="store">I will drop & collect at store</option><option value="home">Home Pickup & Delivery</option></select><div id="pickupNote" class="pickup-note">🚚 <b>Free Pick up And Delivery Available</b> — Order Value ₹299+</div></div>
+    </div>
+  </div>
+  <div class="book-right">
+    <div class="add-box"><h3>ADD MULTIPLE ITEMS</h3>
+<div class="add-grid">
+<select id="category" onchange="populateItems()"><option value="dry">Dry Cleaning</option><option value="steam">Steam Press</option><option value="fold">Wash & Fold</option><option value="press">Wash & Press</option></select>
+<select id="item" onchange="syncCustomItem()"></select>
+</div>
+<div style="margin-top:10px"><label style="font-size:11px;font-weight:700;display:block;margin-bottom:5px">Item Name (optional custom item)</label>
+<input id="customItem" placeholder="e.g. School uniform, sofa cover, wedding dress..." style="width:100%;height:38px;border:1px solid #d5ddeb;border-radius:7px;padding:0 10px"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
+<div><label style="font-size:11px;font-weight:700;display:block;margin-bottom:5px">Quantity</label><div class="qty"><button onclick="changeQty(-1)">−</button><input id="qty" value="1" readonly><button onclick="changeQty(1)">+</button></div></div>
+<div><label style="font-size:11px;font-weight:700;display:block;margin-bottom:5px">Custom Rate ₹ (optional)</label><input id="customRate" type="number" min="0" placeholder="Optional" style="width:100%;height:38px;border:1px solid #d5ddeb;border-radius:7px;padding:0 10px"></div>
+</div>
+<button class="add-btn" onclick="addItem()">＋ Add Item</button>
+<p style="font-size:10px;color:#687386;margin:8px 0">Choose a service, choose an item, then add as many items as needed. You can also write your own item.</p>
+<table class="items"><thead><tr><th>ITEM NAME</th><th>QTY</th><th>RATE</th><th>TOTAL</th></tr></thead><tbody id="itemsBody"><tr><td colspan="4">No items added</td></tr></tbody></table>
+</div>
+<div class="summary"><h3>Booking Summary</h3><div class="sumline"><span>Total Items</span><b id="totalItems">0</b></div><div class="sumline"><span>Subtotal</span><b>₹ <span id="subtotal">0</span></b></div><div class="sumline"><span>Pickup & Delivery</span><b id="deliveryStatus">Store Drop</b></div><div class="sumline total"><span>Total Amount</span><b>₹ <span id="grandTotal">0</span></b></div><a class="wa" onclick="sendWhatsApp()">◉ &nbsp; SEND BOOKING ON WHATSAPP</a><div class="note">Your booking will be sent to your WhatsApp</div></div>
+  </div>
+</section>
+</main>
+
+
+<section id="adminPanel" class="admin-panel">
+  <div class="admin-card" id="adminLoginBox">
+    <div class="section-title">◇ &nbsp; ADMIN LOGIN &nbsp; ◇</div>
+    <p>Enter the admin PIN to open the billing system.</p>
+    <input id="adminPin" type="password" inputmode="numeric" maxlength="6" placeholder="Enter Admin PIN">
+    <button onclick="adminLogin()">🔒 LOGIN</button>
+    <div id="pinError" class="pin-error"></div>
+  </div>
+
+  <div class="billing-card" id="billingPanel" style="display:none">
+    <div class="billing-top">
+      <div><h2>ADMIN BILLING SYSTEM</h2><p>Create and print customer bills</p></div>
+      <button class="logout-btn" onclick="adminLogout()">Logout</button>
+    </div>
+    <div class="bill-form">
+      <input id="billCustomer" placeholder="Customer Name">
+      <input id="billMobile" placeholder="Mobile Number">
+      <input id="billOrder" placeholder="Order / Bill Number">
+      <input id="billDate" type="date">
+      <input id="billSignature" placeholder="Authorized Signature Name" value="Laundry Desire Hub">
+      <label class="signature-upload">Signature Image <input id="billSignatureImage" type="file" accept="image/png,image/jpeg"></label>
+    </div>
+    <div class="bill-add">
+      <input id="billItem" placeholder="Item name">
+      <input id="billQty" type="number" min="1" value="1" placeholder="Qty">
+      <input id="billRate" type="number" min="0" value="0" placeholder="Rate ₹">
+      <button onclick="addBillItem()">＋ Add Item</button>
+    </div>
+    <table class="bill-table"><thead><tr><th>Item</th><th>Qty</th><th>Rate</th><th>Total</th><th></th></tr></thead><tbody id="billBody"></tbody></table>
+    <div class="bill-total">
+      <label>Discount ₹ <input id="billDiscount" type="number" min="0" value="0" oninput="renderBill()"></label>
+      <strong>Grand Total: ₹ <span id="billGrand">0</span></strong>
+    </div>
+    <div class="bill-actions"><small style="display:block;color:#687386;margin-bottom:8px">🔐 Bill protection: watermark + unique verification code + copy/selection restrictions</small><button onclick="printBill()">🖨️ PRINT BILL</button><button onclick="whatsappBill()">◉ WHATSAPP BILL</button></div>
+  </div>
+
+  <div class="billing-card admin-controls" id="adminControls" style="display:none">
+    <div class="billing-top"><div><h2>⚙️ WEBSITE CONTROL CENTER</h2><p>Edit website information, prices, booking, delivery, services and billing settings.</p></div></div>
+    <div class="control-tabs">
+      <button class="control-tab active" onclick="showControlTab('business',this)">Business</button>
+      <button class="control-tab" onclick="showControlTab('services',this)">Services</button>
+      <button class="control-tab" onclick="showControlTab('prices',this)">Prices & Items</button>
+      <button class="control-tab" onclick="showControlTab('booking',this)">Booking & Delivery</button>
+      <button class="control-tab" onclick="showControlTab('billing',this)">Bill & Signature</button>
+      <button class="control-tab" onclick="showControlTab('security',this)">Security</button>
+    </div>
+
+    <div class="control-pane active" id="control-business">
+      <div class="control-grid">
+        <label>Business Name<input id="setBusinessName"></label>
+        <label>Tagline<input id="setTagline"></label>
+        <label>Phone 1<input id="setPhone1"></label>
+        <label>Phone 2<input id="setPhone2"></label>
+        <label class="wide">Address<input id="setAddress"></label>
+        <label>Opening Time<input id="setOpenTime"></label>
+        <label>Closing Time<input id="setCloseTime"></label>
+        <label>WhatsApp Number<input id="setWhatsapp"></label>
+      </div>
+    </div>
+
+    <div class="control-pane" id="control-services">
+      <div class="service-edit-grid">
+        <div><h3>Dry Cleaning</h3><input id="svcDryName"><textarea id="svcDryDesc"></textarea></div>
+        <div><h3>Steam Press</h3><input id="svcSteamName"><textarea id="svcSteamDesc"></textarea></div>
+        <div><h3>Wash & Fold</h3><input id="svcFoldName"><textarea id="svcFoldDesc"></textarea></div>
+        <div><h3>Wash & Press</h3><input id="svcPressName"><textarea id="svcPressDesc"></textarea></div>
+      </div>
+    </div>
+
+    <div class="control-pane" id="control-prices">
+      <div class="price-editor-head"><select id="adminPriceCategory" onchange="renderAdminPriceEditor()"><option value="dry">Dry Cleaning</option><option value="steam">Steam Press</option><option value="fold">Wash & Fold</option><option value="press">Wash & Press</option></select><button class="add-btn" onclick="addAdminPriceRow()">＋ Add Item</button></div>
+      <div id="adminPriceEditor"></div>
+    </div>
+
+    <div class="control-pane" id="control-booking">
+      <div class="control-grid">
+        <label>Free Pickup/Delivery Minimum ₹<input id="setDeliveryMin" type="number" min="0"></label>
+        <label>Free Delivery Text<input id="setFreeDeliveryText"></label>
+        <label>Below Minimum Text<input id="setChargeDeliveryText"></label>
+        <label>Store Drop Text<input id="setStoreDropText"></label>
+        <label class="wide">WhatsApp Booking Header<input id="setBookingHeader"></label>
+      </div>
+    </div>
+
+    <div class="control-pane" id="control-billing">
+      <div class="control-grid">
+        <label>Default Signature Name<input id="setSignatureName"></label>
+        <label>Bill Prefix<input id="setBillPrefix"></label>
+        <label>Bill Footer Note<input id="setBillFooter"></label>
+        <label>Currency Symbol<input id="setCurrency"></label>
+        <label class="wide"><input id="setWatermark" type="checkbox"> Enable bill watermark & verification code</label>
+        <label class="wide"><input id="setCopyProtection" type="checkbox"> Enable basic copy/selection protection on printed bill</label>
+      </div>
+    </div>
+
+    <div class="control-pane" id="control-security">
+      <div class="control-grid">
+        <label>Admin PIN<input id="setAdminPin" type="password" inputmode="numeric" maxlength="12"></label>
+      </div>
+      <p class="security-note">⚠️ This PIN is stored in this browser for this static website. For real security, connect the admin panel to server-side authentication before public production use.</p>
+    </div>
+
+    <div class="control-save"><button class="add-btn" onclick="saveLDHSettings()">💾 SAVE ALL CHANGES</button><button class="logout-btn" onclick="resetLDHSettings()">↺ Reset to Defaults</button><span id="settingsSaved" class="saved-msg"></span></div>
+  </div>
+</section>
+
+<footer id="contact"><div class="footer-grid">
+  <div class="foot"><div class="brand"><img src="shop-sign.jpg" style="width:100px;height:85px;object-fit:cover;border-radius:8px"><div class="brand-text"><strong style="font-size:17px">LAUNDRY DESIRE HUB</strong><span>DRY CLEANING</span></div></div><p>Steam Iron, Dry Clean, Wash & Fold, Wash & Steam Iron, Carpet, Door Mat, Bag, Shoes, Curtain Cleaning & More.</p></div>
+  <div class="foot"><h3>CONTACT US</h3><p>☎ &nbsp; 9535983365<br>☎ &nbsp; 9019355091<br><br>⌖ &nbsp; Kasavanahalli, Bangalore - 560 035<br><br>◷ &nbsp; Timings: 9:00 AM - 9:00 PM (All Days)</p></div>
+  <div class="foot"><h3>QUICK LINKS</h3><ul><li>Home</li><li>Services & Price</li><li>Book Now</li><li>Track Order</li><li>Gallery</li><li>Contact Us</li></ul></div>
+  <div class="foot"><h3>FOLLOW US</h3><p style="font-size:25px">🟢 &nbsp;📍</p><p>We are here to provide the best laundry services with care and quality.</p></div>
+</div><div class="copyright"><span>© 2025 Laundry Desire Hub Dry Cleaning. All Rights Reserved.</span><span>Made with ❤️ for our customers</span></div></footer>
+
+<script>\nconst PRICE_MENUS = {"dry": [{"name": "REGULAR GARMENTS", "rate": "₹ 100"}, {"name": "PULLOVERS / JACKETS", "rate": "₹ 199"}, {"name": "BEDSHEET - SINGLE / DOUBLE / HEAVY", "rate": "₹ 149 / 189 / 239"}, {"name": "CUSHION / PILLOW COVERS - SMALL / LARGE", "rate": "₹ 69 / 99"}, {"name": "CURTAINS - SMALL / LARGE / HEAVY (PER PANEL 3X7FT)", "rate": "₹ 149 / 199 / 269"}, {"name": "BLANKET - SMALL / SINGLE / DOUBLE / HEAVY", "rate": "₹ 299 / 349 / 500"}, {"name": "SAREE - COTTON / SILK / ORNAMENTAL", "rate": "₹ 249 / 349"}, {"name": "DHOTI - NORMAL / SILK", "rate": "₹ 149 / 199"}, {"name": "LEHANGA", "rate": "₹ 399 / 499 / 599"}, {"name": "BLAZER / HEAVY / JACKET", "rate": "₹ 199 / 249"}, {"name": "BLOUSE - NORMAL / ORNAMENTAL", "rate": "₹ 99 / 149"}, {"name": "LADIES DRESS - NORMAL / DESIGNER", "rate": "₹ 249 / 349"}, {"name": "GENTS KURTA - NORMAL / HEAVY", "rate": "₹ 199 / 249"}, {"name": "GENTS SHERWANI - NORMAL / DESIGNER", "rate": "₹ 299 / 399"}, {"name": "KIDS WEAR - NORMAL", "rate": "₹ 75 / 149 / 199"}, {"name": "LADIES KURTA - NORMAL", "rate": "₹ 149 / 199"}, {"name": "WOOLEN SHAWL", "rate": "₹ 149 / 199"}, {"name": "FROCK - NORMAL / ORNAMENTAL", "rate": "₹ 199 / 249"}, {"name": "OVERCOAT", "rate": "₹ 299"}, {"name": "SHOE", "rate": "₹ 249"}, {"name": "CARPET", "rate": "₹ 35 PER SQFT"}, {"name": "DOOR MAT", "rate": "₹ 149 / 199"}, {"name": "TROLLEY BAG", "rate": "₹ 399 / 599"}, {"name": "SMALL BAG", "rate": "₹ 199 / 249"}], "steam": [{"name": "REGULAR GARMENTS", "rate": "₹ 10 / PIECE"}, {"name": "PULLOVERS / JACKETS", "rate": "₹ 10 / PIECE"}, {"name": "BEDSHEET - SINGLE", "rate": "₹ 19 / PIECE"}, {"name": "BEDSHEET - DOUBLE", "rate": "₹ 29 / PIECE"}, {"name": "BEDSHEET - HEAVY", "rate": "₹ 49 / PIECE"}, {"name": "CURTAINS - WINDOWS / SMALL", "rate": "₹ 19 / PIECE"}, {"name": "CURTAINS - DOORS / LARGE", "rate": "₹ 39 / PIECE"}, {"name": "CURTAINS / HEAVY", "rate": "₹ 59 / PIECE"}, {"name": "SAREE - NORMAL (COTTON)", "rate": "₹ 49 / PIECE"}, {"name": "SAREE - SILK", "rate": "₹ 49 / PIECE"}, {"name": "SAREE LEHANGA - HEAVY / ORNAMENTAL", "rate": "₹ 79 / PIECE"}, {"name": "BLAZER / HEAVY JACKET", "rate": "₹ 49 / PIECE"}, {"name": "BLOUSE - NORMAL", "rate": "₹ 10 / PIECE"}, {"name": "BLOUSE - ORNAMENTAL", "rate": "₹ 20 / PIECE"}, {"name": "LADIES DRESS NORMAL", "rate": "₹ 30 / PIECE"}, {"name": "LADIES DRESS DESIGNER / ORNAMENTAL", "rate": "₹ 79 / PIECE"}, {"name": "GENTS KURTA - NORMAL", "rate": "₹ 10 / PIECE"}, {"name": "LADIES KURTA - NORMAL", "rate": "₹ 10 / PIECE"}, {"name": "GENTS KURTA - HEAVY", "rate": "₹ 49 / PIECE"}], "fold": [{"name": "UPTO 4 KGS (REGULAR GARMENTS)", "rate": "₹ 269 FLAT"}, {"name": "ABOVE 4 KGS (REGULAR GARMENTS)", "rate": "₹ 69 / KG"}, {"name": "CURTAINS - SMALL (PER PANEL 3 FT)", "rate": "₹ 49 / PIECE"}, {"name": "CURTAINS - LARGE (PER PANEL 3 FT)", "rate": "₹ 79 / PIECE"}, {"name": "CURTAINS - HEAVY (PER PANEL 3 FT)", "rate": "₹ 119 / PIECE"}, {"name": "BLANKET / QUILL - SINGLE", "rate": "₹ 199 / PIECE"}, {"name": "BLANKET / QUILL - DOUBLE", "rate": "₹ 350 / PIECE"}, {"name": "BLANKET / QUILL - HEAVY", "rate": "₹ 400 / PIECE"}], "press": [{"name": "UPTO 4 KGS (REGULAR GARMENTS)", "rate": "₹ 380 FLAT"}, {"name": "ABOVE 4 KGS (REGULAR GARMENTS)", "rate": "₹ 95 / KG"}, {"name": "CURTAINS - SMALL (PER PANEL 3 FT)", "rate": "₹ 99 / PIECE"}, {"name": "CURTAINS - LARGE (PER PANEL 3 FT)", "rate": "₹ 119 / PIECE"}, {"name": "CURTAINS - HEAVY (PER PANEL 3 FT)", "rate": "₹ 159 / PIECE"}]};\nfunction populateItems(){const cat=document.getElementById("category").value,sel=document.getElementById("item");sel.innerHTML="";PRICE_MENUS[cat].forEach(x=>{const o=document.createElement("option");o.value=x.rate;o.dataset.name=x.name;o.textContent=x.name+" — "+x.rate;sel.appendChild(o)});const c=document.createElement("option");c.value="custom";c.textContent="✍ Write your own item / custom rate";sel.appendChild(c);syncCustomItem();}\ndocument.querySelectorAll("[data-price-tab]").forEach(btn=>btn.addEventListener("click",()=>{document.querySelectorAll("[data-price-tab]").forEach(b=>b.classList.remove("active"));btn.classList.add("active");document.querySelectorAll(".price-tab-panel").forEach(p=>p.style.display="none");document.getElementById("price-"+btn.dataset.priceTab).style.display="block";}));\n</script>\n<script>
+let cart=[];
+function changeQty(n){let q=Math.max(1,Number(document.getElementById('qty').value)+n);document.getElementById('qty').value=q}
+function syncCustomItem(){
+ const sel=document.getElementById('item'), custom=document.getElementById('customItem'), rate=document.getElementById('customRate');
+ if(sel.value!=='custom'){custom.value='';rate.value='';} else custom.focus();
+}
+function addItem(){
+  const sel=document.getElementById('item');
+  const customName=document.getElementById('customItem').value.trim();
+  const customRate=Number(document.getElementById('customRate').value);
+  const qty=Number(document.getElementById('qty').value);
+  let name, rate;
+
+  if(sel.value === 'custom'){
+    if(!customName){alert('Please write the item name.');return}
+    name=customName;
+    rate=customRate || 0;
+  } else {
+    name=sel.options[sel.selectedIndex].dataset.name || sel.options[sel.selectedIndex].text;
+    rate=Number(String(sel.value).replace(/[^0-9.]/g,'')) || 0;
+    if(customName) name=customName;
+    if(customRate>0) rate=customRate;
+  }
+
+  cart.push({name,rate,qty,total:rate*qty});
+  document.getElementById('qty').value=1;
+  document.getElementById('customItem').value='';
+  document.getElementById('customRate').value='';
+  document.getElementById('item').selectedIndex=0;
+  renderCart();
+}
+function renderCart(){
+ const body=document.getElementById('itemsBody'); body.innerHTML='';
+ cart.forEach((x,i)=>body.innerHTML+=`<tr><td>${x.name}</td><td>${x.qty}</td><td>₹${x.rate}</td><td>₹${x.total} <button onclick="cart.splice(${i},1);renderCart()" style="border:0;background:none;color:#d22;cursor:pointer">×</button></td></tr>`);
+ const qty=cart.reduce((a,x)=>a+x.qty,0), total=cart.reduce((a,x)=>a+x.total,0);
+ document.getElementById('totalItems').textContent=qty; document.getElementById('subtotal').textContent=total; document.getElementById('grandTotal').textContent=total;
+ updatePickupDelivery();
+}
+function updatePickupDelivery(){
+ const mode=document.getElementById('pickupDelivery').value;
+ const note=document.getElementById('pickupNote');
+ const status=document.getElementById('deliveryStatus');
+ const total=cart.reduce((a,x)=>a+x.total,0);
+ if(mode==='store'){note.className='pickup-note';note.innerHTML='🏪 <b>'+escapeHtml(LDH_SETTINGS.storeDropText)+'</b>';status.textContent='Store Drop';}
+ else if(total>=Number(LDH_SETTINGS.deliveryMin||299)){note.className='pickup-note free';note.innerHTML='🚚 <b>'+escapeHtml(LDH_SETTINGS.freeDeliveryText)+'</b>';status.textContent='FREE';}
+ else{note.className='pickup-note charge';note.innerHTML='🚚 <b>'+escapeHtml(LDH_SETTINGS.chargeDeliveryText)+'</b>';status.textContent='Charge applicable';}
+}
+function sendWhatsApp(){
+ const name=document.getElementById('name').value.trim(),phone=document.getElementById('phone').value.trim(),address=document.getElementById('address').value.trim(),date=document.getElementById('date').value,time=document.getElementById('time').value;
+ if(!name||!phone||!address||cart.length===0){alert('Please enter your details and add at least one item.');return}
+ let lines=cart.map(x=>`${x.name} | Qty: ${x.qty} | ₹${x.total}`).join('%0A');
+ let orderValue=cart.reduce((a,x)=>a+x.total,0);
+ let pickup=document.getElementById('pickupDelivery').value==='home'?'Home Pickup & Delivery':'Store Drop & Collection';
+ let deliveryText=document.getElementById('pickupDelivery').value==='home' && orderValue>=Number(LDH_SETTINGS.deliveryMin||299)?'FREE (Order Value ₹'+Number(LDH_SETTINGS.deliveryMin||299)+'+)':'Charge applicable';
+ let msg=`*${encodeURIComponent(LDH_SETTINGS.bookingHeader||'Laundry Desire Hub - Booking')}*%0A%0AName: ${encodeURIComponent(name)}%0AMobile: ${encodeURIComponent(phone)}%0AAddress: ${encodeURIComponent(address)}%0ADate: ${encodeURIComponent(date)}%0ATime: ${encodeURIComponent(time)}%0APickup & Delivery: ${encodeURIComponent(pickup)}%0ADelivery: ${encodeURIComponent(deliveryText)}%0A%0A*Items*%0A${lines}%0A%0ATotal: ₹${document.getElementById('grandTotal').textContent}`;
+ window.open(`https://wa.me/${String(LDH_SETTINGS.whatsapp||'919535983365').replace(/\D/g,'')}?text=${msg}`,'_blank');
+}
+</script>
+
+<script>
+let ADMIN_PIN = localStorage.getItem("ldh_admin_pin") || "9008";
+let billItems = [];
+let LDH_SETTINGS = loadLDHSettings();
+function adminLogin(){
+  const pin=document.getElementById('adminPin').value;
+  if(pin===ADMIN_PIN){
+    document.getElementById('adminLoginBox').style.display='none';
+    document.getElementById('billingPanel').style.display='block';
+    document.getElementById('adminControls').style.display='block';
+    applyLDHSettingsToUI();
+    renderAdminPriceEditor();
+    document.getElementById('pinError').textContent='';
+    const d=document.getElementById('billDate'); if(!d.value)d.value=new Date().toISOString().slice(0,10);
+  }else document.getElementById('pinError').textContent='Incorrect PIN. Please try again.';
+}
+function adminLogout(){
+  document.getElementById('billingPanel').style.display='none';
+  document.getElementById('adminControls').style.display='none';
+  document.getElementById('adminLoginBox').style.display='block';
+  document.getElementById('adminPin').value='';
+}
+function addBillItem(){
+  const name=document.getElementById('billItem').value.trim(), qty=Math.max(1,Number(document.getElementById('billQty').value)||1), rate=Math.max(0,Number(document.getElementById('billRate').value)||0);
+  if(!name){alert('Enter item name.');return}
+  billItems.push({name,qty,rate,total:qty*rate});
+  document.getElementById('billItem').value=''; document.getElementById('billQty').value=1; document.getElementById('billRate').value=0; renderBill();
+}
+function renderBill(){
+  const b=document.getElementById('billBody'); b.innerHTML='';
+  billItems.forEach((x,i)=>b.innerHTML+=`<tr><td>${x.name}</td><td>${x.qty}</td><td>₹${x.rate}</td><td>₹${x.total}</td><td><button onclick="billItems.splice(${i},1);renderBill()" style="border:0;background:none;color:#d92332;cursor:pointer">×</button></td></tr>`);
+  const sub=billItems.reduce((a,x)=>a+x.total,0), disc=Math.max(0,Number(document.getElementById('billDiscount').value)||0);
+  document.getElementById('billGrand').textContent=Math.max(0,sub-disc);
+}
+function printBill(){
+  if(!billItems.length){alert('Add at least one item.');return}
+  const customer=document.getElementById('billCustomer').value||'Customer';
+  const mobile=document.getElementById('billMobile').value||'';
+  const order=document.getElementById('billOrder').value||((LDH_SETTINGS.billPrefix||'LDH-')+Date.now().toString().slice(-6));
+  const date=document.getElementById('billDate').value||new Date().toLocaleDateString();
+  const signatureName=document.getElementById('billSignature').value||LDH_SETTINGS.signatureName||'Laundry Desire Hub';
+  const signatureInput=document.getElementById('billSignatureImage');
+  const total=document.getElementById('billGrand').textContent;
+  const verification=(LDH_SETTINGS.billPrefix||'LDH-')+Date.now().toString(36).toUpperCase()+'-'+Math.random().toString(36).slice(2,7).toUpperCase();
+  const rows=billItems.map(x=>`<tr><td>${escapeBill(x.name)}</td><td>${x.qty}</td><td>₹${x.rate}</td><td>₹${x.total}</td></tr>`).join('');
+
+  const openBill=(signatureImage='')=>{
+    const w=window.open('','_blank');
+    if(!w){alert('Please allow pop-ups to print the bill.');return}
+    w.document.write(`<!doctype html><html><head><title>${escapeBill(order)}</title>
+    <style>
+      *{box-sizing:border-box}body{font-family:Arial,sans-serif;padding:34px;color:#17213b;position:relative}
+      .sheet{max-width:780px;margin:auto;border:1px solid #cbd5e1;padding:28px;position:relative;overflow:hidden}
+      h1{color:#06265e;margin:0;font-size:26px}.sub{color:#d49a00;font-weight:700}
+      table{width:100%;border-collapse:collapse;margin-top:24px}th,td{padding:10px;border-bottom:1px solid #dce3ed;text-align:left}
+      th{color:#123d87;background:#f3f6fa}.total{text-align:right;font-size:21px;font-weight:700;color:#123d87;margin-top:18px}
+      .sign{margin-top:42px;text-align:right}.sign img{max-width:150px;max-height:60px;display:block;margin:0 0 5px auto}.sigline{border-top:1px solid #555;width:190px;margin-left:auto;padding-top:5px}
+      .meta{line-height:1.7;font-size:13px}.verify{font-size:10px;color:#64748b;margin-top:18px}
+      .watermark{position:absolute;left:-40px;top:45%;transform:rotate(-28deg);font-size:62px;font-weight:800;color:rgba(20,55,120,.07);white-space:nowrap;pointer-events:none}
+      .notice{font-size:10px;color:#64748b;margin-top:12px}
+      @media print{body{padding:0}.sheet{border:0;max-width:none}.watermark{color:rgba(20,55,120,.08)}}
+    </style></head><body oncontextmenu="return false" onselectstart="return false">
+    <div class="sheet">${LDH_SETTINGS.watermark?`<div class="watermark">ORIGINAL • ${escapeBill(verification)}</div>`:''}
+    <h1>LAUNDRY DESIRE HUB</h1><div class="sub">DRY CLEANING</div><hr>
+    <div class="meta"><b>Bill No:</b> ${escapeBill(order)}<br><b>Date:</b> ${escapeBill(date)}<br><b>Customer:</b> ${escapeBill(customer)}<br><b>Mobile:</b> ${escapeBill(mobile)}</div>
+    <table><tr><th>Item</th><th>Qty</th><th>Rate</th><th>Total</th></tr>${rows}</table>
+    <p class="total">Grand Total: ₹${escapeBill(total)}</p>
+    <div class="sign">${signatureImage ? `<img src="${signatureImage}" alt="Authorized signature">` : ''}<div class="sigline">${escapeBill(signatureName)}</div><small>Authorized Signature</small></div>
+    ${LDH_SETTINGS.watermark?`<div class="verify">Bill verification code: <b>${escapeBill(verification)}</b></div>`:''}
+    <div class="notice">${escapeBill(LDH_SETTINGS.billFooter||'This bill is digitally generated for Laundry Desire Hub.')}</div>
+    </div><script>
+      ${LDH_SETTINGS.copyProtection?`window.onkeydown=function(e){if((e.ctrlKey||e.metaKey)&&['c','u','s','p'].includes(e.key.toLowerCase()))e.preventDefault()}; window.oncopy=function(){return false}; window.oncut=function(){return false};`:''}
+      setTimeout(()=>window.print(),350);
+    <\/script></body></html>`);
+    w.document.close();
+  };
+
+  if(signatureInput && signatureInput.files && signatureInput.files[0]){
+    const reader=new FileReader();
+    reader.onload=e=>openBill(e.target.result);
+    reader.readAsDataURL(signatureInput.files[0]);
+  }else openBill('');
+}
+function escapeBill(v){
+  return String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+}
+function whatsappBill(){
+  if(!billItems.length){alert('Add at least one item.');return}
+  const customer=document.getElementById('billCustomer').value||'Customer', total=document.getElementById('billGrand').textContent;
+  const rows=billItems.map(x=>`${x.name} | Qty ${x.qty} | ₹${x.total}`).join('%0A');
+  const msg=`*Laundry Desire Hub - Bill*%0ACustomer: ${encodeURIComponent(customer)}%0A%0A${rows}%0A%0A*Grand Total: ₹${total}*`;
+  window.open('https://wa.me/?text='+msg,'_blank');
+}
+</script>
+\n<script>\nconst LDH_DEFAULTS={\n businessName:'LAUNDRY DESIRE HUB',tagline:'DRY CLEANING',phone1:'9535983365',phone2:'9019355091',address:'Kasavanahalli, Bangalore - 560 035',openTime:'9:00 AM',closeTime:'9:00 PM',whatsapp:'919535983365',\n deliveryMin:299,freeDeliveryText:'Free Pick up And Delivery Available — Order Value ₹299+',chargeDeliveryText:'Home Pickup & Delivery — Free available on Order Value ₹299+',storeDropText:'Store Drop & Collection — No pickup/delivery charge',bookingHeader:'Laundry Desire Hub - Booking',\n signatureName:'Laundry Desire Hub',billPrefix:'LDH-',billFooter:'This bill is digitally generated for Laundry Desire Hub.',currency:'₹',watermark:true,copyProtection:true,\n services:{dry:{name:'DRY CLEANING',desc:'Premium dry cleaning for all types of clothes.'},steam:{name:'STEAM PRESS',desc:'Perfect steam press for crisp & fresh clothes.'},fold:{name:'WASH & FOLD',desc:'Wash, dry & fold with care and hygiene.'},press:{name:'WASH & PRESS',desc:'Wash & steam press for perfect finish.'}}\n};\nfunction loadLDHSettings(){try{return {...LDH_DEFAULTS,...JSON.parse(localStorage.getItem('ldh_settings')||'{}'),services:{...LDH_DEFAULTS.services,...(JSON.parse(localStorage.getItem('ldh_settings')||'{}').services||{})}}}catch(e){return JSON.parse(JSON.stringify(LDH_DEFAULTS))}}\nfunction showControlTab(id,btn){document.querySelectorAll('.control-tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.control-pane').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.getElementById('control-'+id).classList.add('active')}\nfunction setVal(id,v){const e=document.getElementById(id);if(e)e.value=v??''}\nfunction applyLDHSettingsToUI(){\n setVal('setBusinessName',LDH_SETTINGS.businessName);setVal('setTagline',LDH_SETTINGS.tagline);setVal('setPhone1',LDH_SETTINGS.phone1);setVal('setPhone2',LDH_SETTINGS.phone2);setVal('setAddress',LDH_SETTINGS.address);setVal('setOpenTime',LDH_SETTINGS.openTime);setVal('setCloseTime',LDH_SETTINGS.closeTime);setVal('setWhatsapp',LDH_SETTINGS.whatsapp);\n setVal('setDeliveryMin',LDH_SETTINGS.deliveryMin);setVal('setFreeDeliveryText',LDH_SETTINGS.freeDeliveryText);setVal('setChargeDeliveryText',LDH_SETTINGS.chargeDeliveryText);setVal('setStoreDropText',LDH_SETTINGS.storeDropText);setVal('setBookingHeader',LDH_SETTINGS.bookingHeader);\n setVal('setSignatureName',LDH_SETTINGS.signatureName);setVal('setBillPrefix',LDH_SETTINGS.billPrefix);setVal('setBillFooter',LDH_SETTINGS.billFooter);setVal('setCurrency',LDH_SETTINGS.currency);document.getElementById('setWatermark').checked=!!LDH_SETTINGS.watermark;document.getElementById('setCopyProtection').checked=!!LDH_SETTINGS.copyProtection;setVal('setAdminPin',ADMIN_PIN);\n ['dry','steam','fold','press'].forEach(k=>{setVal('svc'+k.charAt(0).toUpperCase()+k.slice(1)+'Name',LDH_SETTINGS.services[k].name);setVal('svc'+k.charAt(0).toUpperCase()+k.slice(1)+'Desc',LDH_SETTINGS.services[k].desc)});\n}\nfunction renderAdminPriceEditor(){const cat=document.getElementById('adminPriceCategory').value;const box=document.getElementById('adminPriceEditor');box.innerHTML='';(PRICE_MENUS[cat]||[]).forEach((x,i)=>{box.insertAdjacentHTML('beforeend',`<div class="admin-price-row"><input data-price-name="${i}" value="${escapeAttr(x.name)}"><input data-price-rate="${i}" value="${escapeAttr(x.rate)}"><button onclick="deleteAdminPriceRow(${i})" title="Delete">×</button></div>`)});}\nfunction escapeAttr(v){return String(v).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}\nfunction syncAdminPriceEditor(){const cat=document.getElementById('adminPriceCategory').value;const rows=[...document.querySelectorAll('#adminPriceEditor .admin-price-row')];PRICE_MENUS[cat]=rows.map((r,i)=>({name:r.querySelector('[data-price-name]').value.trim()||'Item',rate:r.querySelector('[data-price-rate]').value.trim()||'₹ 0'}))}\nfunction addAdminPriceRow(){syncAdminPriceEditor();const cat=document.getElementById('adminPriceCategory').value;PRICE_MENUS[cat].push({name:'NEW ITEM',rate:'₹ 0'});renderAdminPriceEditor()}\nfunction deleteAdminPriceRow(i){syncAdminPriceEditor();const cat=document.getElementById('adminPriceCategory').value;PRICE_MENUS[cat].splice(i,1);renderAdminPriceEditor()}\nfunction renderPublicPrices(){\n ['dry','steam','fold','press'].forEach(cat=>{const panel=document.getElementById('price-'+cat);if(!panel)return;panel.innerHTML=`<div class="price-grid"><div class="price-col"><div class="price-head"><span>ITEM</span><span>RATE (₹)</span></div></div><div class="price-col"><div class="price-head"><span>ITEM</span><span>RATE (₹)</span></div></div></div>`;const cols=panel.querySelectorAll('.price-col');PRICE_MENUS[cat].forEach((x,i)=>{const row=document.createElement('div');row.className='price-row';row.innerHTML=`<span>${escapeHtml(x.name)}</span><span class="dots"></span><b>${escapeHtml(x.rate)}</b>`;cols[i%2].appendChild(row)})})}\nfunction escapeHtml(v){const d=document.createElement('div');d.textContent=v;return d.innerHTML}\nfunction saveLDHSettings(){\n syncAdminPriceEditor();\n LDH_SETTINGS={...LDH_SETTINGS,businessName:document.getElementById('setBusinessName').value.trim(),tagline:document.getElementById('setTagline').value.trim(),phone1:document.getElementById('setPhone1').value.trim(),phone2:document.getElementById('setPhone2').value.trim(),address:document.getElementById('setAddress').value.trim(),openTime:document.getElementById('setOpenTime').value.trim(),closeTime:document.getElementById('setCloseTime').value.trim(),whatsapp:document.getElementById('setWhatsapp').value.trim(),deliveryMin:Number(document.getElementById('setDeliveryMin').value)||0,freeDeliveryText:document.getElementById('setFreeDeliveryText').value.trim(),chargeDeliveryText:document.getElementById('setChargeDeliveryText').value.trim(),storeDropText:document.getElementById('setStoreDropText').value.trim(),bookingHeader:document.getElementById('setBookingHeader').value.trim(),signatureName:document.getElementById('setSignatureName').value.trim(),billPrefix:document.getElementById('setBillPrefix').value.trim(),billFooter:document.getElementById('setBillFooter').value.trim(),currency:document.getElementById('setCurrency').value.trim()||'₹',watermark:document.getElementById('setWatermark').checked,copyProtection:document.getElementById('setCopyProtection').checked,services:{dry:{name:document.getElementById('svcDryName').value,desc:document.getElementById('svcDryDesc').value},steam:{name:document.getElementById('svcSteamName').value,desc:document.getElementById('svcSteamDesc').value},fold:{name:document.getElementById('svcFoldName').value,desc:document.getElementById('svcFoldDesc').value},press:{name:document.getElementById('svcPressName').value,desc:document.getElementById('svcPressDesc').value}}};\n const newPin=document.getElementById('setAdminPin').value.trim();if(newPin){ADMIN_PIN=newPin;localStorage.setItem('ldh_admin_pin',newPin)}\n localStorage.setItem('ldh_settings',JSON.stringify(LDH_SETTINGS));localStorage.setItem('ldh_price_menus',JSON.stringify(PRICE_MENUS));applyPublicSettings();document.getElementById('settingsSaved').textContent='✓ Saved';setTimeout(()=>document.getElementById('settingsSaved').textContent='',1800);\n}\nfunction resetLDHSettings(){if(!confirm('Reset all website controls to defaults?'))return;localStorage.removeItem('ldh_settings');localStorage.removeItem('ldh_price_menus');localStorage.removeItem('ldh_admin_pin');location.reload()}\nfunction applyPublicSettings(){\n const s=LDH_SETTINGS;document.title=s.businessName+' | '+s.tagline;\n document.querySelectorAll('.brand-text strong').forEach(e=>e.textContent=s.businessName);document.querySelectorAll('.brand-text span').forEach(e=>e.textContent=s.tagline);\n const heroH=document.querySelector('.hero h1');if(heroH)heroH.textContent=s.businessName;const heroSub=document.querySelector('.hero .hero-sub');if(heroSub)heroSub.textContent=s.tagline;\n const phoneEls=document.querySelectorAll('#contact .foot:nth-child(2) p');if(phoneEls[0])phoneEls[0].innerHTML=`☎ &nbsp; ${escapeHtml(s.phone1)}<br>☎ &nbsp; ${escapeHtml(s.phone2)}<br><br>⌖ &nbsp; ${escapeHtml(s.address)}<br><br>◷ &nbsp; Timings: ${escapeHtml(s.openTime)} - ${escapeHtml(s.closeTime)} (All Days)`;\n ['dry','steam','fold','press'].forEach(k=>{const idx={dry:0,steam:1,fold:2,press:3}[k],card=document.querySelectorAll('.services .card')[idx];if(card){card.querySelector('h3').textContent=s.services[k].name;card.querySelector('p').textContent=s.services[k].desc}});\n renderPublicPrices();updatePickupDelivery();\n}\n// Load any saved menu before the public UI initializes.\ntry{const savedMenus=JSON.parse(localStorage.getItem('ldh_price_menus')||'null');if(savedMenus)Object.assign(PRICE_MENUS,savedMenus)}catch(e){}\ndocument.addEventListener('DOMContentLoaded',()=>{applyLDHSettingsToUI();applyPublicSettings();renderAdminPriceEditor()});\n</script>\n</body>
+</html>
