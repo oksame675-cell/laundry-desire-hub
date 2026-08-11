@@ -3,108 +3,1946 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Laundry Desire Hub | Dry Cleaning</title>
+
 <style>
-:root{--navy:#06265e;--blue:#164ca7;--red:#e21f2f;--light:#f7f9fd;--text:#17213b;--border:#dce3ef}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff}
-a{text-decoration:none;color:inherit}.container{width:min(1440px,94%);margin:auto}
-header{height:86px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 3.2%;position:sticky;top:0;z-index:50;box-shadow:0 2px 12px #001b4915}
-.brand{display:flex;align-items:center;gap:14px}.brand-mark{width:60px;height:54px;border-radius:5px;background:var(--navy);position:relative;display:grid;place-items:center;color:#fff;font-size:25px}.brand-mark:after{content:"";position:absolute;width:22px;height:22px;border:2px solid #fff;border-radius:50%}.brand-text strong{display:block;color:var(--navy);font-size:24px;letter-spacing:.2px}.brand-text span{display:block;color:var(--red);font-weight:800;letter-spacing:2px;font-size:14px;margin-top:2px}
-nav{display:flex;align-items:center;gap:34px;font-weight:700;font-size:14px}nav a{padding:33px 0;position:relative}nav a.active:after{content:"";height:3px;background:var(--navy);left:0;right:0;bottom:23px;position:absolute}.admin{background:var(--navy);color:white;padding:13px 20px;border-radius:9px;box-shadow:0 5px 12px #06265e35}
-.menu{display:none;font-size:27px;color:var(--navy);cursor:pointer}
 
-.hero{min-height:500px;position:relative;overflow:hidden;background:var(--navy)}
-.hero-bg{position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(3,39,94,.88) 0%,rgba(6,43,102,.62) 42%,rgba(6,38,94,.22) 72%,rgba(6,38,94,.08) 100%),url("shop-front-1.jpg");background-size:cover;background-position:center}
-.hero-content{position:relative;z-index:2;color:#fff;padding:64px 3.2% 25px;min-height:500px;display:flex;flex-direction:column;justify-content:space-between}
-.badge{display:inline-block;background:#123d73;border:1px solid #7192bc;border-radius:22px;padding:9px 17px;font-size:14px;font-weight:700;margin-bottom:24px}.badge:first-letter{color:#ffd12a}
-.hero h1{font-size:46px;margin:0 0 7px;letter-spacing:.4px}.hero h2{font-size:25px;color:#ffd000;margin:0 0 24px}.pill{background:#f4f6fa;color:#08265c;border-radius:34px;padding:15px 25px;max-width:560px;font-weight:700;line-height:1.45}
-.features{display:flex;gap:0;margin-top:30px}.feature{width:150px;text-align:center;border-right:1px solid #ffffff55;padding:0 20px}.feature:last-child{border:0}.feature .ico{font-size:26px;margin:auto auto 10px;border:1px solid #ffffff55;border-radius:50%;width:48px;height:48px;display:grid;place-items:center}.feature b{font-size:14px;line-height:1.35}
-.hero-bottom{display:flex;justify-content:flex-end;gap:0;margin-top:-72px}.info{background:#071d3bd9;color:white;min-width:205px;padding:20px 25px;border-left:1px solid #ffffff55}.info strong{display:block;margin-bottom:5px}.info small{line-height:1.5}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-.services{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:20px 0 18px}.card{border:1px solid #e1e5ec;border-radius:10px;background:#fff;padding:17px;box-shadow:0 3px 12px #17213b12}.card-head{display:flex;gap:14px;align-items:center}.circle{width:55px;height:55px;border-radius:50%;background:#144ba5;color:#fff;display:grid;place-items:center;font-size:25px;box-shadow:0 4px 9px #0c3d912f}.card h3{margin:0;color:#123d87;font-size:19px}.card p{margin:5px 0 12px;font-size:13px;color:#586173;line-height:1.4}.card img{width:100%;height:118px;object-fit:cover;border-radius:7px}.price-btn{display:block;width:128px;margin:10px auto 0;background:#2059bd;color:white;text-align:center;padding:8px;border-radius:5px;font-weight:700;font-size:12px}
+html{
+  scroll-behavior:smooth;
+}
 
-.section-title{display:flex;align-items:center;gap:15px;justify-content:center;color:#123d87;font-size:23px;margin:10px 0}.section-title:before,.section-title:after{content:"";height:1px;background:#cfd7e4;width:20%}.tabs{display:flex;justify-content:center;gap:28px;margin:0 0 10px}.tab{border:1px solid #d8dfeb;background:#fff;border-radius:5px;padding:9px 38px;font-weight:700;font-size:13px;cursor:pointer}.tab.active{background:#1d55b6;color:#fff}
-.price-box{border:1px solid #d9e0ec;border-radius:10px;box-shadow:0 2px 10px #12264a10;padding:18px 25px;margin-bottom:10px}.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px}.price-col{min-width:0}.price-head{display:flex;justify-content:space-between;color:#123d87;font-weight:800;font-size:12px;padding-bottom:8px;border-bottom:1px solid #e3e8f0}.price-row{display:flex;gap:8px;align-items:flex-end;font-weight:700;font-size:12px;color:#123d87;margin:8px 0}.price-row:before{content:"◆";color:#d7252d;font-size:8px}.dots{flex:1;border-bottom:2px dotted #aeb8cb;min-width:10px;margin-bottom:3px}.price-more{display:block;margin:12px auto 0;border:1px solid #d9e0eb;background:#f2f4f8;border-radius:6px;padding:10px 50px;color:#123d87;font-weight:700;cursor:pointer}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:#17213b;
+  background:#fff;
+}
 
-.booking{display:grid;grid-template-columns:1.05fr .95fr;border:2px solid #123d87;border-radius:10px;overflow:hidden;margin:12px 0 25px}.book-left{background:#062d68;color:#fff;padding:22px 25px}.book-left h2{margin:0 0 3px;font-size:18px}.book-left>p{font-size:11px;margin:0 0 16px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 18px}.field label{display:block;font-size:11px;font-weight:700;margin-bottom:5px}.field input,.field select{width:100%;height:38px;border:1px solid #d6deea;border-radius:7px;padding:0 10px}.full{grid-column:1/-1}.book-right{background:#fff;padding:17px 20px;display:grid;grid-template-columns:1fr 1fr;gap:20px}.add-box h3,.summary h3{color:#123d87;font-size:15px;margin:0 0 13px}.add-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.qty{display:flex;align-items:center;gap:0}.qty button{height:38px;width:36px;border:1px solid #d5ddeb;background:#fff;cursor:pointer}.qty input{width:45px;text-align:center;height:38px;border:1px solid #d5ddeb}.add-btn{margin-top:10px;background:#1c59bb;color:#fff;border:0;border-radius:6px;padding:9px 16px;font-weight:700;cursor:pointer}.items{margin-top:10px;width:100%;border-collapse:collapse;font-size:10px}.items th{color:#123d87;text-align:left;border-bottom:1px solid #e0e6ef;padding:7px}.items td{padding:7px;border-bottom:1px solid #eef1f6}.summary{border:1px solid #dce2ed;border-radius:8px;padding:17px;box-shadow:0 2px 10px #15264c10}.sumline{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #e8ebf1;font-size:12px}.total{font-weight:800;font-size:15px}.wa{display:block;text-align:center;background:#10a84b;color:white;padding:12px;border-radius:6px;margin-top:16px;font-weight:800;cursor:pointer}.note{text-align:center;font-size:10px;color:#606a7d;margin-top:10px}
+a{
+  text-decoration:none;
+  color:inherit;
+}
 
-footer{background:#fafcff;border-top:1px solid #e1e6ee;padding:25px 3.2% 10px}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}.foot h3{color:#123d87;font-size:14px}.foot p,.foot li{font-size:11px;line-height:1.7;color:#3e4759}.foot ul{padding-left:18px}.copyright{border-top:1px solid #e1e6ee;margin-top:18px;padding-top:9px;display:flex;justify-content:space-between;font-size:10px;color:#596273}
+.container{
+  width:min(1400px,94%);
+  margin:auto;
+}
 
-.control-tabs{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 18px}.control-tab{border:1px solid #d6deea;background:#fff;color:#123d87;border-radius:6px;padding:8px 12px;font-weight:700;cursor:pointer}.control-tab.active{background:#123f8c;color:#fff}.control-pane{display:none}.control-pane.active{display:block}.control-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.control-grid label,.service-edit-grid>div{font-size:11px;font-weight:700;color:#42506a}.control-grid input,.control-grid textarea,.service-edit-grid input,.service-edit-grid textarea,.price-editor-head select,.admin-price-row input{width:100%;margin-top:5px;height:38px;border:1px solid #d5ddeb;border-radius:6px;padding:0 10px;background:#fff}.control-grid .wide{grid-column:1/-1}.service-edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.service-edit-grid h3{margin:0 0 5px;color:#123d87;font-size:13px}.service-edit-grid textarea{height:70px;padding:8px;resize:vertical}.price-editor-head{display:flex;gap:10px;margin-bottom:12px}.price-editor-head select{width:240px}.admin-price-row{display:grid;grid-template-columns:1.8fr 1fr auto;gap:8px;margin-bottom:8px;align-items:center}.admin-price-row button{height:38px;border:0;background:#fff;color:#d92332;font-size:18px;cursor:pointer}.control-save{margin-top:18px;padding-top:15px;border-top:1px solid #e2e7ef;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.saved-msg{color:#159447;font-weight:700;font-size:12px}.security-note{font-size:11px;color:#8a5a00;background:#fff8e8;border:1px solid #f1dfac;padding:10px;border-radius:6px}
-@media(max-width:1000px){nav{gap:14px;font-size:12px}.services{grid-template-columns:1fr 1fr}.hero h1{font-size:38px}.booking{grid-template-columns:1fr}.book-right{grid-template-columns:1fr}}
-@media(max-width:700px){header{height:70px}.brand-text strong{font-size:16px}.brand-text span{font-size:10px}.brand-mark{width:44px;height:42px}.menu{display:block}nav{display:none;position:absolute;top:70px;left:0;right:0;background:#fff;flex-direction:column;padding:15px;box-shadow:0 5px 15px #0002}nav.open{display:flex}nav a{padding:10px}.admin{padding:10px 15px}.hero-content{padding:38px 20px 25px}.hero{min-height:650px}.hero-content{min-height:650px}.hero h1{font-size:31px}.hero-bottom{position:absolute;bottom:0;left:0;right:0;display:grid;grid-template-columns:1fr 1fr}.info{min-width:0;padding:12px}.features{overflow-x:auto}.services{grid-template-columns:1fr}.price-grid{grid-template-columns:1fr;gap:20px}.tabs{overflow-x:auto;justify-content:flex-start;padding:0 10px}.tab{white-space:nowrap;padding:8px 18px}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}.footer-grid{grid-template-columns:1fr 1fr}.copyright{flex-direction:column;gap:5px}}
+/* ================= HEADER ================= */
 
-.hub-gallery{display:grid;grid-template-columns:1.35fr .8fr .8fr;grid-template-rows:180px 180px;gap:12px}
-.hub-gallery>div{position:relative;overflow:hidden;border-radius:10px;border:1px solid #dfe5ee;box-shadow:0 3px 12px #17213b12;background:#fff}
-.hub-gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
-.hub-gallery>div:hover img{transform:scale(1.04)}
-.gallery-main{grid-row:1/3}.gallery-sign{grid-column:2/4}
-.hub-gallery span{position:absolute;left:10px;bottom:10px;background:#06265ed9;color:#fff;padding:7px 11px;border-radius:5px;font-size:11px;font-weight:700}
-@media(max-width:700px){.hub-gallery{grid-template-columns:1fr 1fr;grid-template-rows:190px 150px 150px}.gallery-main{grid-row:1;grid-column:1/3}.gallery-sign{grid-column:1/3}}
+header{
+  height:82px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 3%;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 2px 15px rgba(0,0,0,.10);
+}
 
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
 
-@media(max-width:700px){.items{min-width:430px}.add-box{overflow-x:auto}}
+.brand-mark{
+  width:58px;
+  height:52px;
+  background:#06265e;
+  color:#fff;
+  border-radius:6px;
+  display:grid;
+  place-items:center;
+  font-size:28px;
+  position:relative;
+}
 
-.admin-panel{background:#f7f9fd;padding:22px 3.2%;border-top:1px solid #e0e6ef}
-.admin-card,.billing-card{width:min(1100px,100%);margin:auto;background:#fff;border:1px solid #dbe2ed;border-radius:10px;padding:22px;box-shadow:0 4px 18px #17213b12}
-.admin-card{text-align:center}.admin-card p{font-size:12px;color:#687386}.admin-card input{height:40px;width:260px;border:1px solid #d2dbe8;border-radius:6px;padding:0 12px}.admin-card button,.bill-actions button,.bill-add button{height:40px;background:#123f8c;color:#fff;border:0;border-radius:6px;padding:0 18px;font-weight:700;cursor:pointer;margin-left:7px}.pin-error{color:#d92332;font-size:11px;margin-top:8px;min-height:14px}
-.billing-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.billing-top h2{margin:0;color:#123d87;font-size:19px}.billing-top p{font-size:11px;color:#697386;margin:4px 0}.logout-btn{border:1px solid #d5dce8;background:#fff;border-radius:6px;padding:8px 14px;cursor:pointer}
-.bill-form{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.bill-form input,.bill-add input{height:38px;border:1px solid #d5ddeb;border-radius:6px;padding:0 10px}.bill-add{display:grid;grid-template-columns:2fr .7fr .9fr auto;gap:8px;margin:14px 0}.bill-add button{margin:0}.bill-table{width:100%;border-collapse:collapse;font-size:11px}.bill-table th{background:#f1f4f9;color:#123d87;text-align:left;padding:9px}.bill-table td{border-bottom:1px solid #e6eaf1;padding:9px}.bill-total{display:flex;justify-content:flex-end;align-items:center;gap:30px;margin-top:15px}.bill-total label{font-size:12px}.bill-total input{width:100px;height:34px;border:1px solid #d5ddeb;border-radius:5px;padding:0 8px}.bill-total strong{font-size:18px;color:#123d87}.bill-actions{text-align:right;margin-top:15px}.bill-actions button{margin-left:8px}
-@media(max-width:700px){.control-grid,.service-edit-grid{grid-template-columns:1fr}.control-grid .wide{grid-column:auto}.price-editor-head{flex-direction:column}.price-editor-head select{width:100%}.admin-price-row{grid-template-columns:1fr 90px 35px}.admin-card input{width:100%;margin-bottom:8px}.admin-card button{margin:0;width:100%}.bill-form{grid-template-columns:1fr 1fr}.bill-add{grid-template-columns:1fr 70px 90px}.bill-add button{grid-column:1/-1}.bill-total{justify-content:space-between;gap:8px}.bill-actions{text-align:center}.bill-actions button{width:100%;margin:5px 0}}
-.pickup-note{margin-top:7px;padding:9px 10px;background:#edf7ff;border:1px solid #c9e5ff;border-radius:6px;color:#12457f;font-size:10px}.pickup-note.free{background:#edfbed;border-color:#b9e6c0;color:#166b2b}.pickup-note.charge{background:#fff8e8;border-color:#f0d28b;color:#7b5a00}
-.signature-upload{height:38px;border:1px solid #d5ddeb;border-radius:6px;padding:0 10px;display:flex;align-items:center;gap:8px;font-size:11px;color:#566276;background:#fff}
-.signature-upload input{height:auto;border:0;padding:0;flex:1}
-@media(max-width:700px){.hero-bg{background-image:linear-gradient(90deg,rgba(3,39,94,.52),rgba(3,39,94,.25)),url("shop-front-1.jpg");background-position:center center;background-size:cover}.hero{background:#06265e}.hero-content{background:transparent}}\n</style>
+.brand-mark:after{
+  content:"";
+  position:absolute;
+  width:22px;
+  height:22px;
+  border:2px solid #fff;
+  border-radius:50%;
+}
+
+.brand-text strong{
+  display:block;
+  color:#06265e;
+  font-size:22px;
+}
+
+.brand-text span{
+  display:block;
+  color:#e21f2f;
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:2px;
+  margin-top:3px;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+
+nav a{
+  font-size:13px;
+  font-weight:bold;
+  padding:30px 0;
+  position:relative;
+}
+
+nav a:hover{
+  color:#164ca7;
+}
+
+nav a.active:after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:20px;
+  height:3px;
+  background:#06265e;
+}
+
+.admin-btn{
+  background:#06265e;
+  color:white!important;
+  padding:12px 18px!important;
+  border-radius:7px;
+}
+
+.menu{
+  display:none;
+  font-size:28px;
+  color:#06265e;
+  cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  min-height:520px;
+  position:relative;
+  overflow:hidden;
+  background:#06265e;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+
+  background-image:
+  linear-gradient(
+    90deg,
+    rgba(3,39,94,.90) 0%,
+    rgba(6,43,102,.68) 45%,
+    rgba(6,38,94,.25) 75%,
+    rgba(6,38,94,.08) 100%
+  ),
+  url("shop-front-1.jpg");
+
+  background-size:cover;
+  background-position:center;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  color:white;
+  min-height:520px;
+  padding:65px 3%;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.badge{
+  display:inline-block;
+  background:#123d73;
+  border:1px solid #7192bc;
+  border-radius:25px;
+  padding:10px 17px;
+  font-size:14px;
+  font-weight:bold;
+  margin-bottom:22px;
+}
+
+.hero h1{
+  font-size:48px;
+  margin-bottom:5px;
+  letter-spacing:.5px;
+}
+
+.hero h2{
+  color:#ffd000;
+  font-size:27px;
+  margin-bottom:22px;
+}
+
+.services-pill{
+  display:inline-block;
+  background:#f4f6fa;
+  color:#08265c;
+  border-radius:35px;
+  padding:15px 25px;
+  max-width:600px;
+  font-weight:bold;
+  line-height:1.5;
+}
+
+.features{
+  display:flex;
+  margin-top:32px;
+}
+
+.feature{
+  width:150px;
+  text-align:center;
+  border-right:1px solid rgba(255,255,255,.35);
+  padding:0 20px;
+}
+
+.feature:last-child{
+  border:none;
+}
+
+.feature-icon{
+  width:48px;
+  height:48px;
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  margin:auto auto 9px;
+  font-size:24px;
+}
+
+.feature b{
+  font-size:13px;
+  line-height:1.4;
+}
+
+.hero-bottom{
+  display:flex;
+  justify-content:flex-end;
+}
+
+.info{
+  background:rgba(7,29,59,.92);
+  color:#fff;
+  min-width:210px;
+  padding:18px 22px;
+  border-left:1px solid rgba(255,255,255,.25);
+}
+
+.info strong{
+  display:block;
+  margin:5px 0;
+}
+
+.info small{
+  line-height:1.5;
+}
+
+/* ================= SERVICES ================= */
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  padding:25px 0;
+}
+
+.card{
+  border:1px solid #e1e5ec;
+  border-radius:10px;
+  background:#fff;
+  padding:17px;
+  box-shadow:0 3px 12px rgba(23,33,59,.08);
+}
+
+.card-head{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.circle{
+  width:54px;
+  height:54px;
+  flex-shrink:0;
+  border-radius:50%;
+  background:#144ba5;
+  color:white;
+  display:grid;
+  place-items:center;
+  font-size:23px;
+}
+
+.card h3{
+  color:#123d87;
+  font-size:18px;
+}
+
+.card p{
+  color:#586173;
+  font-size:12px;
+  margin-top:5px;
+  line-height:1.4;
+}
+
+.card img{
+  width:100%;
+  height:135px;
+  object-fit:cover;
+  border-radius:7px;
+  margin-top:14px;
+}
+
+.price-btn{
+  display:block;
+  width:140px;
+  margin:11px auto 0;
+  background:#2059bd;
+  color:#fff;
+  text-align:center;
+  padding:9px;
+  border-radius:5px;
+  font-weight:bold;
+  font-size:12px;
+}
+
+/* ================= TITLES ================= */
+
+.section-title{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  color:#123d87;
+  font-size:23px;
+  font-weight:bold;
+  margin:20px 0;
+}
+
+.section-title:before,
+.section-title:after{
+  content:"";
+  height:1px;
+  background:#cfd7e4;
+  width:20%;
+}
+
+/* ================= PRICE ================= */
+
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-bottom:15px;
+  flex-wrap:wrap;
+}
+
+.tab{
+  border:1px solid #d8dfeb;
+  background:white;
+  border-radius:6px;
+  padding:10px 25px;
+  font-weight:bold;
+  cursor:pointer;
+  color:#123d87;
+}
+
+.tab.active{
+  background:#1d55b6;
+  color:white;
+}
+
+.price-box{
+  border:1px solid #d9e0ec;
+  border-radius:10px;
+  box-shadow:0 2px 10px rgba(18,38,74,.07);
+  padding:20px 25px;
+  margin-bottom:30px;
+}
+
+.price-panel{
+  display:none;
+}
+
+.price-panel.active{
+  display:block;
+}
+
+.price-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+.price-head{
+  display:flex;
+  justify-content:space-between;
+  color:#123d87;
+  font-weight:bold;
+  font-size:12px;
+  padding-bottom:8px;
+  border-bottom:1px solid #e3e8f0;
+}
+
+.price-row{
+  display:flex;
+  gap:7px;
+  align-items:flex-end;
+  font-weight:bold;
+  font-size:11px;
+  color:#123d87;
+  margin:9px 0;
+}
+
+.price-row:before{
+  content:"◆";
+  color:#d7252d;
+  font-size:7px;
+}
+
+.dots{
+  flex:1;
+  border-bottom:2px dotted #aeb8cb;
+  min-width:10px;
+  margin-bottom:3px;
+}
+
+/* ================= BOOKING ================= */
+
+.booking{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border:2px solid #123d87;
+  border-radius:10px;
+  overflow:hidden;
+  margin:25px 0;
+}
+
+.book-left{
+  background:#062d68;
+  color:white;
+  padding:28px;
+}
+
+.book-left h2{
+  margin-bottom:5px;
+}
+
+.book-left p{
+  font-size:12px;
+  margin-bottom:20px;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.field label{
+  display:block;
+  font-size:11px;
+  font-weight:bold;
+  margin-bottom:5px;
+}
+
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  border:1px solid #d6deea;
+  border-radius:6px;
+  padding:10px;
+  font-family:inherit;
+}
+
+.field textarea{
+  height:80px;
+  resize:none;
+}
+
+.full{
+  grid-column:1/-1;
+}
+
+.book-btn{
+  margin-top:16px;
+  width:100%;
+  background:#19a94b;
+  color:white;
+  border:0;
+  border-radius:6px;
+  padding:13px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.book-right{
+  background:#fff;
+  padding:28px;
+}
+
+.book-right h3{
+  color:#123d87;
+  margin-bottom:15px;
+}
+
+.booking-info{
+  border:1px solid #dce2ed;
+  border-radius:8px;
+  padding:18px;
+  margin-bottom:15px;
+}
+
+.booking-info p{
+  font-size:13px;
+  margin:10px 0;
+}
+
+.call-btn{
+  display:block;
+  text-align:center;
+  background:#123f8c;
+  color:white;
+  padding:12px;
+  border-radius:6px;
+  font-weight:bold;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery{
+  display:grid;
+  grid-template-columns:1.4fr .8fr .8fr;
+  grid-template-rows:200px 200px;
+  gap:12px;
+  margin:25px 0;
+}
+
+.gallery-item{
+  position:relative;
+  overflow:hidden;
+  border-radius:10px;
+  border:1px solid #dfe5ee;
+}
+
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.3s;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.04);
+}
+
+.gallery-main{
+  grid-row:1/3;
+}
+
+.gallery-wide{
+  grid-column:2/4;
+}
+
+.gallery-item span{
+  position:absolute;
+  left:10px;
+  bottom:10px;
+  background:rgba(6,38,94,.9);
+  color:white;
+  padding:7px 11px;
+  border-radius:5px;
+  font-size:11px;
+  font-weight:bold;
+}
+
+/* ================= TRACK ================= */
+
+.track-box{
+  max-width:700px;
+  margin:25px auto;
+  padding:25px;
+  border:1px solid #dce3ef;
+  border-radius:10px;
+  box-shadow:0 3px 15px rgba(0,0,0,.07);
+  text-align:center;
+}
+
+.track-box input{
+  width:100%;
+  padding:12px;
+  border:1px solid #d5ddeb;
+  border-radius:6px;
+  margin:12px 0;
+}
+
+.track-btn{
+  background:#123f8c;
+  color:white;
+  border:0;
+  padding:11px 25px;
+  border-radius:6px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+#trackResult{
+  margin-top:15px;
+  font-weight:bold;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin:25px 0;
+}
+
+.contact-card{
+  border:1px solid #dce3ef;
+  border-radius:10px;
+  padding:22px;
+  text-align:center;
+}
+
+.contact-card .big{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.contact-card h3{
+  color:#123d87;
+  margin-bottom:7px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  background:#fafcff;
+  border-top:1px solid #e1e6ee;
+  padding:30px 3%;
+  margin-top:30px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:30px;
+}
+
+.foot h3{
+  color:#123d87;
+  margin-bottom:10px;
+}
+
+.foot p,
+.foot li{
+  color:#596273;
+  font-size:12px;
+  line-height:1.7;
+}
+
+.foot ul{
+  padding-left:18px;
+}
+
+.copyright{
+  border-top:1px solid #e1e6ee;
+  margin-top:20px;
+  padding-top:10px;
+  font-size:11px;
+  color:#596273;
+  text-align:center;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:1000px){
+
+  nav{
+    gap:12px;
+  }
+
+  nav a{
+    font-size:11px;
+  }
+
+  .services{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  .booking{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:700px){
+
+  header{
+    height:70px;
+    padding:0 15px;
+  }
+
+  .brand-mark{
+    width:43px;
+    height:40px;
+  }
+
+  .brand-text strong{
+    font-size:15px;
+  }
+
+  .brand-text span{
+    font-size:9px;
+  }
+
+  .menu{
+    display:block;
+  }
+
+  nav{
+    display:none;
+    position:absolute;
+    top:70px;
+    left:0;
+    right:0;
+    background:white;
+    flex-direction:column;
+    padding:15px;
+    gap:0;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+  }
+
+  nav.open{
+    display:flex;
+  }
+
+  nav a{
+    padding:12px;
+    width:100%;
+    text-align:center;
+  }
+
+  nav a.active:after{
+    display:none;
+  }
+
+  .admin-btn{
+    margin-top:5px;
+  }
+
+  .hero{
+    min-height:650px;
+  }
+
+  .hero-content{
+    min-height:650px;
+    padding:40px 20px 20px;
+  }
+
+  .hero-bg{
+    background-image:
+    linear-gradient(
+      90deg,
+      rgba(3,39,94,.70),
+      rgba(3,39,94,.35)
+    ),
+    url("shop-front-1.jpg");
+  }
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .hero h2{
+    font-size:22px;
+  }
+
+  .services-pill{
+    font-size:12px;
+  }
+
+  .features{
+    overflow-x:auto;
+  }
+
+  .feature{
+    min-width:115px;
+    padding:0 10px;
+  }
+
+  .hero-bottom{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+
+  .info{
+    min-width:0;
+    padding:12px;
+    font-size:11px;
+  }
+
+  .info:last-child{
+    grid-column:1/-1;
+  }
+
+  .services{
+    grid-template-columns:1fr;
+  }
+
+  .price-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  .price-box{
+    padding:15px;
+    overflow:hidden;
+  }
+
+  .price-row{
+    font-size:10px;
+  }
+
+  .tabs{
+    overflow-x:auto;
+    justify-content:flex-start;
+    flex-wrap:nowrap;
+  }
+
+  .tab{
+    white-space:nowrap;
+    padding:9px 15px;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .full{
+    grid-column:auto;
+  }
+
+  .gallery{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:200px 150px 150px;
+  }
+
+  .gallery-main{
+    grid-row:1;
+    grid-column:1/-1;
+  }
+
+  .gallery-wide{
+    grid-column:1/-1;
+  }
+
+  .contact{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+/* ================= WHATSAPP FLOAT ================= */
+
+.whatsapp{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  background:#19b953;
+  color:white;
+  display:grid;
+  place-items:center;
+  font-size:27px;
+  box-shadow:0 5px 15px rgba(0,0,0,.25);
+  z-index:200;
+}
+
+</style>
 </head>
+
 <body>
+
+<!-- ================= HEADER ================= -->
+
 <header>
-  <a class="brand" href="#home">
-    <div class="brand-mark">◉</div>
-    <div class="brand-text"><strong>LAUNDRY DESIRE HUB</strong><span>DRY CLEANING</span></div>
-  </a>
-  <div class="menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</div>
-  <nav>
-    <a class="active" href="#home">HOME</a><a href="#services">SERVICES & PRICE</a><a href="#booking">BOOK NOW</a><a href="#track">TRACK ORDER</a><a href="#gallery">GALLERY</a><a href="#adminPanel">ADMIN</a><a href="#contact">CONTACT</a><a class="admin" href="#admin">🔒 ADMIN LOGIN</a>
-  </nav>
+
+<a class="brand" href="#home">
+
+<div class="brand-mark">◉</div>
+
+<div class="brand-text">
+<strong>LAUNDRY DESIRE HUB</strong>
+<span>DRY CLEANING</span>
+</div>
+
+</a>
+
+<div class="menu"
+onclick="document.querySelector('nav').classList.toggle('open')">
+☰
+</div>
+
+<nav>
+
+<a class="active" href="#home">HOME</a>
+
+<a href="#services">SERVICES & PRICE</a>
+
+<a href="#booking">BOOK NOW</a>
+
+<a href="#track">TRACK ORDER</a>
+
+<a href="#gallery">GALLERY</a>
+
+<a href="#contact">CONTACT</a>
+
+<a class="admin-btn" href="#booking">
+🔒 ADMIN LOGIN
+</a>
+
+</nav>
+
 </header>
 
+
+<!-- ================= HOME ================= -->
+
 <section id="home" class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div>
-      <span class="badge">⭐ Best Laundry Services in Bangalore</span>
-      <h1>LAUNDRY DESIRE HUB</h1><h2>DRY CLEANING</h2>
-      <div class="pill">Steam Iron • Dry Clean • Wash & Fold • Carpet • Door Mat<br>Bag • Shoes • Curtain Cleaning & More</div>
-      <div class="features">
-        <div class="feature"><div class="ico">⚙</div><b>Quality<br>Cleaning</b></div>
-        <div class="feature"><div class="ico">🚚</div><b>On Time<br>Delivery</b></div>
-        <div class="feature"><div class="ico">♙</div><b>Best<br>Price</b></div>
-        <div class="feature"><div class="ico">✂</div><b>Customer<br>Satisfaction</b></div>
-      </div>
-    </div>
-    <div class="hero-bottom">
-      <div class="info">🕘 <strong>Timings</strong><small>9:00 AM - 9:00 PM<br>All Days</small></div>
-      <div class="info">📞 <strong>Call Us</strong><small>9535983365<br>9019355091</small></div>
-      <div class="info">📍 <strong>Location</strong><small>Kasavanahalli, Bangalore<br>560 035</small></div>
-    </div>
-  </div>
+
+<div class="hero-bg"></div>
+
+<div class="hero-content">
+
+<div>
+
+<span class="badge">
+⭐ Best Laundry Services in Bangalore
+</span>
+
+<h1>LAUNDRY DESIRE HUB</h1>
+
+<h2>DRY CLEANING</h2>
+
+<div class="services-pill">
+Steam Iron • Dry Clean • Wash & Fold • Carpet • Door Mat
+<br>
+Bag • Shoes • Curtain Cleaning & More
+</div>
+
+<div class="features">
+
+<div class="feature">
+<div class="feature-icon">⚙</div>
+<b>Quality<br>Cleaning</b>
+</div>
+
+<div class="feature">
+<div class="feature-icon">🚚</div>
+<b>On Time<br>Delivery</b>
+</div>
+
+<div class="feature">
+<div class="feature-icon">₹</div>
+<b>Best<br>Price</b>
+</div>
+
+<div class="feature">
+<div class="feature-icon">✓</div>
+<b>Customer<br>Satisfaction</b>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="hero-bottom">
+
+<div class="info">
+🕘
+<strong>Timings</strong>
+<small>
+9:00 AM - 9:00 PM<br>
+All Days
+</small>
+</div>
+
+<div class="info">
+📞
+<strong>Call Us</strong>
+<small>
+9535983365<br>
+9019355091
+</small>
+</div>
+
+<div class="info">
+📍
+<strong>Location</strong>
+<small>
+Kasavanahalli, Bangalore<br>
+560 035
+</small>
+</div>
+
+</div>
+
+</div>
+
 </section>
+
 
 <main class="container">
-<section id="services" class="services">
-  <article class="card"><div class="card-head"><div class="circle">♙</div><div><h3>DRY CLEANING</h3><p>Premium dry cleaning for all types of clothes.</p></div></div><img src="service-dry-cleaning.jpg"><a class="price-btn" href="#prices">View Price List</a></article>
-  <article class="card"><div class="card-head"><div class="circle">♨</div><div><h3>STEAM PRESS</h3><p>Perfect steam press for crisp & fresh clothes.</p></div></div><img src="service-steam-press.jpg"><a class="price-btn" href="#prices">View Price List</a></article>
-  <article class="card"><div class="card-head"><div class="circle">▣</div><div><h3>WASH & FOLD</h3><p>Wash, dry & fold with care and hygiene.</p></div></div><img src="service-wash-fold.jpg"><a class="price-btn" href="#prices">View Price List</a></article>
-  <article class="card"><div class="card-head"><div class="circle">♜</div><div><h3>WASH & PRESS</h3><p>Wash & steam press for perfect finish.</p></div></div><img src="service-wash-press.jpg"><a class="price-btn" href="#prices">View Price List</a></article>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+<div class="services">
+
+<article class="card">
+
+<div class="card-head">
+
+<div class="circle">♙</div>
+
+<div>
+<h3>DRY CLEANING</h3>
+<p>Premium dry cleaning for all types of clothes.</p>
+</div>
+
+</div>
+
+<img src="service-dry-cleaning.jpg">
+
+<a class="price-btn" href="#prices">
+View Price List
+</a>
+
+</article>
+
+
+<article class="card">
+
+<div class="card-head">
+
+<div class="circle">♨</div>
+
+<div>
+<h3>STEAM PRESS</h3>
+<p>Perfect steam press for crisp & fresh clothes.</p>
+</div>
+
+</div>
+
+<img src="service-steam-press.jpg">
+
+<a class="price-btn" href="#prices">
+View Price List
+</a>
+
+</article>
+
+
+<article class="card">
+
+<div class="card-head">
+
+<div class="circle">▣</div>
+
+<div>
+<h3>WASH & FOLD</h3>
+<p>Wash, dry & fold with care and hygiene.</p>
+</div>
+
+</div>
+
+<img src="service-wash-fold.jpg">
+
+<a class="price-btn" href="#prices">
+View Price List
+</a>
+
+</article>
+
+
+<article class="card">
+
+<div class="card-head">
+
+<div class="circle">♜</div>
+
+<div>
+<h3>WASH & PRESS</h3>
+<p>Wash & steam press for perfect finish.</p>
+</div>
+
+</div>
+
+<img src="service-wash-press.jpg">
+
+<a class="price-btn" href="#prices">
+View Price List
+</a>
+
+</article>
+
+</div>
+
 </section>
 
+
+<!-- ================= PRICE ================= -->
+
 <section id="prices">
-<div class="section-title">◇ &nbsp; OUR PRICE LIST &nbsp; ◇</div>
-<div class="tabs">
-<button class="tab active" data-price-tab="dry">DRY CLEANING</button>
-<button class="tab" data-price-tab="steam">STEAM PRESS</button>
-<button class="tab" data-price-tab="fold">WASH & FOLD</button>
-<button class="tab" data-price-tab="press">WASH & PRESS</button>
+
+<div class="section-title">
+◇ OUR PRICE LIST ◇
 </div>
+
+
+<div class="tabs">
+
+<button class="tab active" onclick="showPrice('dry',this)">
+DRY CLEANING
+</button>
+
+<button class="tab" onclick="showPrice('steam',this)">
+STEAM PRESS
+</button>
+
+<button class="tab" onclick="showPrice('fold',this)">
+WASH & FOLD
+</button>
+
+<button class="tab" onclick="showPrice('press',this)">
+WASH & PRESS
+</button>
+
+</div>
+
+
 <div class="price-box">
-<div id="price-dry" class="price-tab-panel"><div class="price-grid"><div class="price-col"><div class="price-head"><span>ITEM</span><span>RATE (₹)</span></div><div class="price-row"><span>REGULAR GARMENTS</span><span class="dots"></span><b>₹ 100</b></div><div class="price-row"><span>PULLOVERS / JACKETS</span><span class="dots"></span><b>₹ 199</b></div><div class="price-row"><span>BEDSHEET - SINGLE / DOUBLE / HEAVY</span><span class="dots"></span><b>₹ 149 / 189 / 239</b></div><div class="price-row"><span>CUSHION / PILLOW COVERS - SMALL / LARGE</span><span class="dots"></span><b>₹ 69 / 99</b></div><div class="price-row"><span>CURTAINS - SMALL / LARGE / HEAVY (PER PANEL 3X7FT)</span><span class="dots"></span><b>₹ 149 / 199 / 269</b></div><div class="price-row"><span>BLANKET - SMALL / SINGLE / DOUBLE / HEAVY</span><span class="dots"></span><b>₹ 299 / 349 / 500</b></div><div class="price-row"><span>SAREE - COTTON / SILK / ORNAMENTAL</span><span class="dots"></span><b>₹ 249 / 349</b></div><div class="price-row"><span>DHOTI - NORMAL / SILK</span><span class="dots"></span><b>₹ 149 / 199</b></div><div class="price-row"><span>LEHANGA</span><span class="dots"></span><b>₹ 399 / 499 / 599</b></div><div class="price-row"><span>BLAZER / HEAVY / JACKET</span><span class="dots"></span><b>₹ 199 / 249</b></div><div class="price-row"><span>BLOUSE - NORMAL / ORNAMENTAL</span><span class="dots"></span><b>₹ 99 / 149</b></div><div class="price-row"><span>LADIES DRESS - NORMAL / DESIGNER</span><span class="dots"></span><b>₹ 249 / 349</b></div></div><div class="price-col"><div class="price-head"><span>ITEM</span><span>RATE (₹)</span></div><div class="price-row"><span>GENTS KURTA - NORMAL / HEAVY</span><span class="dots"></span><b>₹ 199 / 249</b></div><div class="price-row"><span>GENTS SHERWANI - NORMAL / DESIGNER</span><span class="dots"></span><b>₹ 299 / 399</b></div><div class="price-row"><span>KIDS WEAR - NORMAL</span><span class="dots"></span><b>₹ 75 / 149 / 199</b></div><div class="price-row"><span>LADIES KURTA - NORMAL</span><span class="dots"></span><b>₹ 149 / 199</b></div><div class="price-row"><span>WOOLEN SHAWL</span><span class="dots"></span><b>₹ 149 / 199</b></div><div class="price-row"><span>FROCK - NORMAL / ORNAMENTAL</span><span class="dots"></span><b>₹ 199 / 249</b></div><div class="price-row"><span>OVERCOAT</span><span class="dots"></span><b>₹ 299</b></div><div class="price-row"><span>SHOE</span><span class="dots"></span><b>₹ 249</b></div><div class="price-row"><span>CARPET</span><span class="dots"></span><b>₹ 35 PER SQFT</b></div><div cl
+
+
+<!-- DRY -->
+
+<div id="dry" class="price-panel active">
+
+<div class="price-grid">
+
+<div>
+
+<div class="price-head">
+<span>ITEM</span>
+<span>RATE (₹)</span>
+</div>
+
+<div class="price-row">
+<span>REGULAR GARMENTS</span>
+<span class="dots"></span>
+<b>₹100</b>
+</div>
+
+<div class="price-row">
+<span>PULLOVERS / JACKETS</span>
+<span class="dots"></span>
+<b>₹199</b>
+</div>
+
+<div class="price-row">
+<span>BEDSHEET - SINGLE / DOUBLE</span>
+<span class="dots"></span>
+<b>₹149 / 189</b>
+</div>
+
+<div class="price-row">
+<span>CUSHION / PILLOW COVERS</span>
+<span class="dots"></span>
+<b>₹69 / 99</b>
+</div>
+
+<div class="price-row">
+<span>CURTAINS</span>
+<span class="dots"></span>
+<b>₹149 / 199 / 269</b>
+</div>
+
+<div class="price-row">
+<span>BLANKET</span>
+<span class="dots"></span>
+<b>₹299 / 349 / 500</b>
+</div>
+
+</div>
+
+
+<div>
+
+<div class="price-head">
+<span>ITEM</span>
+<span>RATE (₹)</span>
+</div>
+
+<div class="price-row">
+<span>SAREE</span>
+<span class="dots"></span>
+<b>₹249 / 349</b>
+</div>
+
+<div class="price-row">
+<span>DHOTI</span>
+<span class="dots"></span>
+<b>₹149 / 199</b>
+</div>
+
+<div class="price-row">
+<span>LEHANGA</span>
+<span class="dots"></span>
+<b>₹399 / 499 / 599</b>
+</div>
+
+<div class="price-row">
+<span>BLAZER / JACKET</span>
+<span class="dots"></span>
+<b>₹199 / 249</b>
+</div>
+
+<div class="price-row">
+<span>SHOE</span>
+<span class="dots"></span>
+<b>₹249</b>
+</div>
+
+<div class="price-row">
+<span>CARPET</span>
+<span class="dots"></span>
+<b>₹35 / SQFT</b>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- STEAM -->
+
+<div id="steam" class="price-panel">
+
+<div class="price-grid">
+
+<div>
+
+<div class="price-head">
+<span>ITEM</span>
+<span>RATE (₹)</span>
+</div>
+
+<div class="price-row">
+<span>SHIRT</span>
+<span class="dots"></span>
+<b>₹15</b>
+</div>
+
+<div class="price-row">
+<span>T-SHIRT</span>
+<span class="dots"></span>
+<b>₹15</b>
+</div>
+
+<div class="price-row">
+<span>PANT</span>
+<span class="dots"></span>
+<b>₹20</b>
+</div>
+
+<div class="price-row">
+<span>JEANS</span>
+<span class="dots"></span>
+<b>₹25</b>
+</div>
+
+</div>
+
+<div>
+
+<div class="price-head">
+<span>ITEM</span>
+<span>RATE (₹)</span>
+</div>
+
+<div class="price-row">
+<span>KURTA</span>
+<span class="dots"></span>
+<b>₹25</b>
+</div>
+
+<div class="price-row">
+<span>SAREE</span>
+<span class="dots"></span>
+<b>₹50</b>
+</div>
+
+<div class="price-row">
+<span>JACKET</span>
+<span class="dots"></span>
+<b>₹40</b>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FOLD -->
+
+<div id="fold" class="price-panel">
+
+<div class="price-grid">
+
+<div>
+
+<div class="price-head">
+<span>ITEM</span>
+<span>RATE (₹)</span>
+</div>
+
+<div class="price-row">
+<span>REGULAR CLOTHES</span>
+<span class="dots"></span>
+<b>₹80 / KG</b>
+</div>
+
+<div class="price-row">
+<span>BED SHEET</span>
+<span class="dots"></span>
+<b>₹60</b>
+</div>
+
+<div class="price-row">
+<span>TOWEL</span>
+<span class="dots"></span>
+<b>₹40</b>
+</div>
+
+</div>
+
+<div>
+
+<div class="price-head">
+<span>ITEM</span>
+<span>RATE (₹)</span>
+</div>
+
+<div class="price-row">
+<span>BLANKET</span>
+<span class="dots"></span>
+<b>₹150</b>
+</div>
+
+<div class="price-row">
+<span>CURTAIN</span>
+<span class="dots"></span>
+<b>₹100+</b>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRESS -->
+
+<div id="press" class="price-panel">
+
+<div class="price-grid">
+
+<div>
+
+<div class="price-head">
+<span>ITEM</span>
+<span>RATE (₹)</span>
+</div>
+
+<div class="price-row">
+<span>SHIRT</span>
+<span class="dots"></span>
+<b>₹25</b>
+</div>
+
+<div class="price-row">
+<span>T-SHIRT</span>
+<span class="dots"></span>
+<b>₹25</b>
+</div>
+
+<div class="price-row">
+<span>PANT</span>
+<span class="dots"></span>
+<b>₹30</b>
+</div>
+
+</div>
+
+<div>
+
+<div class="price-head">
+<span>ITEM</span>
+<span>RATE (₹)</span>
+</div>
+
+<div class="price-row">
+<span>KURTA</span>
+<span class="dots"></span>
+<b>₹35</b>
+</div>
+
+<div class="price-row">
+<span>SAREE</span>
+<span class="dots"></span>
+<b>₹60</b>
+</div>
+
+<div class="price-row">
+<span>JACKET</span>
+<span class="dots"></span>
+<b>₹50</b>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= BOOKING ================= -->
+
+<section id="booking">
+
+<div class="section-title">
+◇ BOOK YOUR LAUNDRY ◇
+</div>
+
+<div class="booking">
+
+<div class="book-left">
+
+<h2>Book Now</h2>
+
+<p>
+Enter your details and send your booking directly on WhatsApp.
+</p>
+
+<div class="form-grid">
+
+<div class="field">
+
+<label>Name *</label>
+
+<input
+type="text"
+id="name"
+placeholder="Your name">
+
+</div>
+
+
+<div class="field">
+
+<label>Mobile Number *</label>
+
+<input
+type="tel"
+id="phone"
+placeholder="Mobile number">
+
+</div>
+
+
+<div class="field full">
+
+<label>Address *</label>
+
+<textarea
+id="address"
+placeholder="Complete address"></textarea>
+
+</div>
+
+
+<div class="field">
+
+<label>Service *</label>
+
+<select id="service">
+
+<option>Dry Cleaning</option>
+<option>Steam Press</option>
+<option>Wash & Fold</option>
+<option>Wash & Press</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>Preferred Date *</label>
+
+<input
+type="date"
+id="date">
+
+</div>
+
+
+<div class="field">
+
+<label>Preferred Time *</label>
+
+<select id="time">
+
+<option>9:00 AM</option>
+<option>10:00 AM</option>
+<option>11:00 AM</option>
+<option>12:00 PM</option>
+<option>1:00 PM</option>
+<option>2:00 PM</option>
+<option>3:00 PM</option>
+<option>4:00 PM</option>
+<option>5:00 PM</option>
+<option>6:00 PM</option>
+<option>7:00 PM</option>
+<option>8:00 PM</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<button class="book-btn" onclick="sendWhatsApp()">
+📱 BOOK ON WHATSAPP
+</button>
+
+</div>
+
+
+<div class="book-right">
+
+<h3>Pickup & Delivery</h3>
+
+<div class="booking-info">
+
+<p>🚚 <b>Home Pickup & Delivery</b></p>
+
+<p>💰 Free pickup and delivery on order value ₹299+</p>
+
+<p>📍 Kasavanahalli, Bangalore - 560035</p>
+
+<p>🕘 9:00 AM - 9:00 PM</p>
+
+</div>
+
+<a class="call-btn" href="tel:9535983365">
+📞 Call 9535983365
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= TRACK ================= -->
+
+<section id="track">
+
+<div class="section-title">
+◇ TRACK YOUR ORDER ◇
+</div>
+
+<div class="track-box">
+
+<h3>Enter Order Number</h3>
+
+<input
+type="text"
+id="orderNumber"
+placeholder="Example: LDH1001">
+
+<button
+class="track-btn"
+onclick="trackOrder()">
+TRACK ORDER
+</button>
+
+<div id="trackResult"></div>
+
+</div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery">
+
+<div class="section-title">
+◇ OUR GALLERY ◇
+</div>
+
+<div class="gallery">
+
+<div class="gallery-item gallery-main">
+
+<img src="hero-shop.jpg">
+
+<span>LAUNDRY DESIRE HUB</span>
+
+</div>
+
+
+<div class="gallery-item gallery-wide">
+
+<img src="shop-front-1.jpg">
+
+<span>SHOP FRONT</span>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img src="shop-front-2.jpg">
+
+<span>OUR SHOP</span>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img src="shop-night.jpg">
+
+<span>SHOP AT NIGHT</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<div class="section-title">
+◇ CONTACT US ◇
+</div>
+
+<div class="contact">
+
+<div class="contact-card">
+
+<div class="big">📞</div>
+
+<h3>Call Us</h3>
+
+<p>9535983365</p>
+<p>9019355091</p>
+
+</div>
+
+
+<div class="contact-card">
+
+<div class="big">📍</div>
+
+<h3>Location</h3>
+
+<p>
+Kasavanahalli,<br>
+Bangalore - 560035
+</p>
+
+</div>
+
+
+<div class="contact-card">
+
+<div class="big">🕘</div>
+
+<h3>Opening Hours</h3>
+
+<p>
+9:00 AM - 9:00 PM
+</p>
+
+<p>All Days</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div class="foot">
+
+<h3>LAUNDRY DESIRE HUB</h3>
+
+<p>
+Professional dry cleaning, steam press,
+wash & fold and wash & press services.
+</p>
+
+</div>
+
+
+<div class="foot">
+
+<h3>Services</h3>
+
+<ul>
+
+<li>Dry Cleaning</li>
+<li>Steam Press</li>
+<li>Wash & Fold</li>
+<li>Wash & Press</li>
+<li>Home Pickup</li>
+
+</ul>
+
+</div>
+
+
+<div class="foot">
+
+<h3>Contact</h3>
+
+<p>📞 9535983365</p>
+<p>📞 9019355091</p>
+<p>📍 Kasavanahalli, Bangalore</p>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 Laundry Desire Hub. All Rights Reserved.
+
+</div>
+
+</footer>
+
+
+<!-- ================= WHATSAPP ================= -->
+
+<a
+class="whatsapp"
+href="https://wa.me/919535983365"
+target="_blank">
+☘
+</a>
+
+
+<script>
+
+/* ================= PRICE TABS ================= */
+
+function showPrice(id,button){
+
+document.querySelectorAll(".price-panel")
+.forEach(function(panel){
+panel.classList.remove("active");
+});
+
+document.getElementById(id)
+.classList.add("active");
+
+document.querySelectorAll(".tab")
+.forEach(function(tab){
+tab.classList.remove("active");
+});
+
+button.classList.add("active");
+
+}
+
+
+/* ================= WHATSAPP BOOKING ================= */
+
+function sendWhatsApp(){
+
+let name =
+document.getElementById("name").value.trim();
+
+let phone =
+document.getElementById("phone").value.trim();
+
+let address =
+document.getElementById("address").value.trim();
+
+let service =
+document.getElementById("service").value;
+
+let date =
+document.getElementById("date").value;
+
+let time =
+document.getElementById("time").value;
+
+
+if(!name || !phone || !address || !date){
+
+alert("Please fill all required details.");
+
+return;
+
+}
+
+
+let message =
+"LAUNDRY DESIRE HUB - NEW BOOKING%0A%0A" +
+
+"Name: " + encodeURIComponent(name) + "%0A" +
+
+"Mobile: " + encodeURIComponent(phone) + "%0A" +
+
+"Address: " + encodeURIComponent(address) + "%0A" +
+
+"Service: " + encodeURIComponent(service) + "%0A" +
+
+"Date: " + encodeURIComponent(date) + "%0A" +
+
+"Time: " + encodeURIComponent(time);
+
+
+window.open(
+"https://wa.me/919535983365?text=" + message,
+"_blank"
+);
+
+}
+
+
+/* ================= TRACK ORDER ================= */
+
+function trackOrder(){
+
+let order =
+document.getElementById("orderNumber")
+.value.trim();
+
+let result =
+document.getElementById("trackResult");
+
+
+if(!order){
+
+result.innerHTML =
+"Please enter your order number.";
+
+result.style.color="#d92332";
+
+return;
+
+}
+
+
+result.innerHTML =
+"Order " +
+order +
+" received. Please contact us on WhatsApp for the latest status.";
+
+result.style.color="#123f8c";
+
+}
+
+
+/* ================= MOBILE MENU ================= */
+
+document.querySelectorAll("nav a")
+.forEach(function(link){
+
+link.addEventListener("click",function(){
+
+document.querySelector("nav")
+.classList.remove("open");
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
